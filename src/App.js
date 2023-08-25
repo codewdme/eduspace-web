@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Assignments from "./components/Assignments";
+import Syllabus from "./components/Syllabus";
+import Pyqs from "./components/Pyqs";
+import NoteState from "./context/notes/NoteState";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NoteState>
+      <Router>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route path="/syllabus" element={<Syllabus />} />
+            <Route path="/pyqs" element={<Pyqs />} />
+            <Route path="/assignments" element={<Assignments />} />
+          </Routes>
+        </div>
+      </Router>
+    </NoteState>
   );
-}
+};
 
 export default App;
