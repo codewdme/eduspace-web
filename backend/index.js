@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/db", require("./routes/fetchfileinfo"));
 app.use("/api/db", require("./routes/addfileinfo"));
+app.use(express.static("./public"));
 
 app.listen(port, () => {
   console.log(`server started at port ${port}`);

@@ -1,30 +1,41 @@
 import React from "react";
 
 const File = (props) => {
-  console.log(props);
   return (
     <div className="flex justify-between items-center p-3 px-8 bg-[#396DB5] hover:bg-blue-600 hover:text-white hover:fill-white cursor-pointer rounded-lg shadow-2x">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 w-[40%] ">
         {/* icon */}
-        <a href={props.fileUrl}>
+        <a
+          className="flex items-center gap-3 "
+          href={props.fileUrl}
+          target="_blank"
+        >
           <svg
+            className=""
             xmlns="http://www.w3.org/2000/svg"
             height="1rem"
             viewBox="0 0 384 512"
           >
             <path d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z" />
           </svg>
+
+          {/* filename and details */}
+          <p>{props.title}</p>
         </a>
-
-        {/* filename and details */}
-        <p>{props.title}</p>
-
+      </div>
+      <div className="flex items-center gap-3 ">
+        <p>{props.examName}</p>
+        <p>SEM-{props.semester}</p>
         <p>{props.year}</p>
       </div>
 
       {/* download icon */}
-      <a href={props.fileDownloadUrl}>
+      <a
+        className="hover:scale-150 transition hover:ease-in-out"
+        href={props.fileDownloadUrl}
+      >
         <svg
+          className="hover:scale-150 transition hover:ease-in-out"
           xmlns="http://www.w3.org/2000/svg"
           height="1rem"
           viewBox="0 0 512 512"

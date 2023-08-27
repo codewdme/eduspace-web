@@ -1,14 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const fileInfo = require("../models/fileInfo");
-const { body, validationResult } = require("express-validator");
 
-// get all fileInfo using GET : "/api/fileInfo/fetchallfileInfo" . login required.
+// using get request to fetch file info from mongo db by passing query parameters in params.
 router.get(
-  "/fetchfileinfo",
+  "/fetchfileinfo/:course/:semester",
 
   async (req, res) => {
-    let filesData = await fileInfo.find({});
+    // converting params value to the value that database can read
+    let originalString = req.params["course"];
+    let courseName = originalString.replace(/\./g, "").toUpperCase();
+
+    // setting value of sem from params
+    let sem = req.params["semester"];
+
+    // query for mongo db
+
+    let filesData = await fileInfo.find({ semester: sem, course: courseName });
 
     try {
       res.send(filesData);

@@ -6,6 +6,18 @@ const fileInfoSchema = new Schema({
     type: String,
     required: true,
   },
+  examName: {
+    type: String,
+    required: true,
+  },
+  course: {
+    type: String,
+    required: true,
+  },
+  semester: {
+    type: Number,
+    required: true,
+  },
   fileUrl: {
     type: String,
     required: true,

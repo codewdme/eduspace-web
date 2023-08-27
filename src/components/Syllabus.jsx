@@ -1,16 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import noteContext from "../context/notes/noteContext";
+import ChooseSem from "./ChooseSem";
 
 const Syllabus = () => {
-  const a = useContext(noteContext);
-
-  useEffect(() => {
-    a.update();
-  }, []);
-
   return (
-    <div>
-      this is about {a.state.name} who studies in {a.state.section}
+    <div className="text-center text-xl font-bold">
+      <ChooseSem />
     </div>
   );
 };

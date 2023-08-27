@@ -6,7 +6,6 @@ const { body, validationResult } = require("express-validator");
 // get all fileInfo using GET : "/api/fileInfo/fetchallfileInfo" . login required.
 router.post(
   "/addfileinfo",
-  body("fileName").isLength({ min: 5 }),
 
   async (req, res) => {
     // if errors, return bad request and the errors.
@@ -22,11 +21,17 @@ router.post(
     }
     //  creates a new fileInfo if one doesn't exist
     try {
+      let originalString = req.body.course;
+      let courseName = originalString.replace(/\./g, "").toUpperCase();
+
       filesData = await fileInfo.create({
         fileName: req.body.fileName,
         fileUrl: req.body.fileUrl,
         fileDownloadUrl: req.body.fileDownloadUrl,
         year: req.body.year,
+        course: courseName,
+        semester: req.body.semester,
+        examName: req.body.examName,
       });
       res.send(filesData);
     } catch (error) {
