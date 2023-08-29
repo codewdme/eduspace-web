@@ -19,7 +19,7 @@ const NoteState = (props) => {
   // api call to fetch files information from backend.
   async function fetchFiles(sem) {
     console.log(sem);
-    let url = `http://localhost:5000/api/db/fetchfileinfo/${courseName}/${sem}`;
+    let url = `https://naughty-lion-train.cyclic.app/edgerunners/junexus/fetchfileinfo/${courseName}/${sem}`;
     console.log(url);
 
     const response = await fetch(url, {
@@ -36,7 +36,7 @@ const NoteState = (props) => {
 
   // ADDING FILE INFO TO DB
   async function addFiles() {
-    let url = `http://localhost:5000/api/db/addfileinfo`;
+    let url = `https://naughty-lion-train.cyclic.app/edgerunners/junexus/addfileinfo`;
 
     const response = await fetch(url, {
       method: "POST",
