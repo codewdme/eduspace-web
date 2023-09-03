@@ -1,11 +1,9 @@
-import React, { useContext, useEffect } from "react";
-import noteContext from "../context/notes/noteContext";
-import ChooseSem from "./ChooseSem";
+import React from "react";
 
 const Syllabus = () => {
   return (
     <div className="text-center text-xl font-bold">
-      <ChooseSem />
+      This page is under Progress. Will be available soon.
     </div>
   );
 };

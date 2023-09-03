@@ -5,6 +5,7 @@ const NoteState = (props) => {
   const [state, setState] = useState([]);
   const [courseName, setCourseName] = useState(null);
   const [uploadInfo, setUploadInfo] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const semesterOptions = [1, 2, 3, 4, 5, 6, 7, 8];
   const courseOptions = [
@@ -18,20 +19,24 @@ const NoteState = (props) => {
 
   // api call to fetch files information from backend.
   async function fetchFiles(sem) {
-    console.log(sem);
-    let url = `https://naughty-lion-train.cyclic.app/edgerunners/junexus/fetchfileinfo/${courseName}/${sem}`;
-    console.log(url);
+    setLoading(true);
+    setTimeout(async () => {
+      console.log(sem);
+      let url = `https://naughty-lion-train.cyclic.app/edgerunners/junexus/fetchfileinfo/${courseName}/${sem}`;
+      console.log(url);
 
-    const response = await fetch(url, {
-      method: "GET",
+      const response = await fetch(url, {
+        method: "GET",
 
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const json = await response.json();
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const json = await response.json();
 
-    setState(json);
+      setState(json);
+    }, 1500);
+    setLoading(false);
   }
 
   // ADDING FILE INFO TO DB
@@ -70,6 +75,7 @@ const NoteState = (props) => {
         setUploadInfo,
         fetchFiles,
         addFiles,
+        loading,
 
         state,
         courseName,

@@ -11,7 +11,8 @@ import ChooseCourse from "./components/ChooseCourse";
 import Results from "./components/Results";
 import AddFileInfoForm from "./components/AddFileInfoForm";
 import Validation from "./components/Validation";
-
+import StudyMaterial from "./components/StudyMaterial";
+import Home from "./components/Home";
 const App = () => {
   return (
     <NoteState>
@@ -19,6 +20,7 @@ const App = () => {
         <div>
           <Navbar />
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/pyqs" element={<Pyqs />} />
             <Route path="/choosecourse" element={<ChooseCourse />} />
@@ -28,6 +30,7 @@ const App = () => {
             <Route path="/syllabus" element={<Syllabus />} />
             <Route path="/addfileinfoform" element={<AddFileInfoForm />} />
             <Route path="/validation" element={<Validation />} />
+            <Route path="/studymaterial" element={<StudyMaterial />} />
           </Routes>
         </div>
       </Router>
