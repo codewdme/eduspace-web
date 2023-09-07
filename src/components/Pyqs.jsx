@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
-import File from "./File";
-import noteContext from "../context/notes/noteContext";
-import { useContext } from "react";
+// import File from "./File";
+import { useLocation } from "react-router-dom";
+// import noteContext from "../context/notes/noteContext";
+// import { useContext } from "react";
+
 import ChooseCourse from "./ChooseCourse";
 
 const Pyqs = () => {
-  const propData = useContext(noteContext);
+  // const propData = useContext(noteContext);
+  const location = useLocation();
 
   // on componetn mount it calls the fetchfiles function to get fileInfo data from backend API;
   // useEffect(() => {

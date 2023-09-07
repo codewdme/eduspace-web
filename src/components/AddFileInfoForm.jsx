@@ -29,9 +29,24 @@ const AddFileInfoForm = () => {
 
   return (
     <div className="flex justify-center items-center p-16 ">
-      <div className="w-full ">
+      <div className="w-full  ">
         <form className="bg-white flex flex-col gap-4 rounded ">
           <div className="grid grid-cols-2 gap-4">
+            <div className="">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="category"
+              >
+                CATEGORY
+              </label>
+              <input
+                onChange={onChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="category"
+                type="text"
+                placeholder="PYQS / ASSIGNMENTS / SYLLABUS / NOTES"
+              />
+            </div>
             <div className="">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -90,7 +105,7 @@ const AddFileInfoForm = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="examName"
                 type="text"
-                placeholder="END SEM"
+                placeholder="END SEM >> if not a question paper then >> NULL"
               />
             </div>
             <div className="">
@@ -123,7 +138,7 @@ const AddFileInfoForm = () => {
                 placeholder="https://drive.google.com/file/d/1wPpzYwC6Gl-bKQA7GxY5mCS632_bV5RM/view"
               />
             </div>
-            <div className="col-span-2">
+            <div className="">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="fileDownloadUrl"
@@ -140,7 +155,7 @@ const AddFileInfoForm = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mt-4">
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
@@ -150,7 +165,7 @@ const AddFileInfoForm = () => {
             </button>
           </div>
         </form>
-        <p className="text-center text-gray-500 text-xs">
+        <p className="p-12 text-center text-gray-500 text-xs">
           &copy;2023 EdgeRunners Corp. All rights reserved.
         </p>
       </div>

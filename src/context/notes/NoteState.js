@@ -6,6 +6,7 @@ const NoteState = (props) => {
   const [courseName, setCourseName] = useState(null);
   const [uploadInfo, setUploadInfo] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [selectedSem, setSelectedSem] = useState(null);
 
   const semesterOptions = [1, 2, 3, 4, 5, 6, 7, 8];
   const courseOptions = [
@@ -19,6 +20,7 @@ const NoteState = (props) => {
 
   // api call to fetch files information from backend.
   async function fetchFiles(sem) {
+    setSelectedSem(sem);
     setLoading(true);
     setTimeout(async () => {
       console.log(sem);
@@ -75,6 +77,7 @@ const NoteState = (props) => {
         setUploadInfo,
         fetchFiles,
         addFiles,
+        selectedSem,
         loading,
 
         state,
