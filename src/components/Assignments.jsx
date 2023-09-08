@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import noteContext from "../context/notes/noteContext";
+import { useContext } from "react";
+
+import ChooseCourse from "./ChooseCourse";
+import Results from "./Results";
 
 const Assignments = () => {
+  const propData = useContext(noteContext);
+  const location = useLocation();
+
+  // on componetn mount it calls the fetchfiles function to get fileInfo data from backend API;
+  useEffect(() => {
+    propData.setSelectedCategory(location.pathname.replace(/\//g, ""));
+  });
+
   return (
-    <div className="p-4 text-center text-xl font-bold ">
-      This page is under Progress. Will be available soon.
-    </div>
+    <>
+      <div className={`${propData.state.length === 0 ? "" : "hidden"}`}>
+        <ChooseCourse />
+      </div>
+      <div className={`${propData.state.length === 0 ? "hidden" : ""}`}>
+        <Results />
+      </div>
+    </>
   );
 };
 

@@ -23,9 +23,27 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/pyqs" element={<Pyqs />} />
-            <Route path="/choosecourse" element={<ChooseCourse />} />
             <Route path="/results" element={<Results />} />
-            <Route path="/choosesem" element={<ChooseSem />} />
+            {/* course routes */}
+            <Route path="/pyqs/choosecourse" element={<ChooseCourse />} />
+            <Route path="/syllabus/choosecourse" element={<ChooseCourse />} />
+            <Route
+              path="/assignments/choosecourse"
+              element={<ChooseCourse />}
+            />
+            <Route path="/notes/choosecourse" element={<ChooseCourse />} />
+
+            {/* sem routes */}
+            <Route path="/pyqs/choosesem" element={<ChooseSem />} />
+            <Route path="/syllabus/choosesem" element={<ChooseSem />} />
+            <Route path="/assignments/choosesem" element={<ChooseSem />} />
+            <Route path="/notes/choosesem" element={<ChooseSem />} />
+            {/* results routes */}
+            <Route path="/pyqs/results" element={<Results />} />
+            <Route path="/syllabus/results" element={<Results />} />
+            <Route path="/assignments/results" element={<Results />} />
+            <Route path="/notes/results" element={<Results />} />
+
             <Route path="/assignments" element={<Assignments />} />
             <Route path="/syllabus" element={<Syllabus />} />
             <Route path="/addfileinfoform" element={<AddFileInfoForm />} />

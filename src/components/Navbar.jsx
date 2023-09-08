@@ -1,12 +1,20 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import noteContext from "../context/notes/noteContext";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const propData = useContext(noteContext);
+
   let location = useLocation();
-  useEffect(() => {});
+
+  const resetfunc = () => {
+    propData.setSelectedSem(null);
+    propData.setCourseName(null);
+  };
   return (
     <div>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+      <nav className="bg-white border-gray-200 dark:bg-gray-900 sticky">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link to="/" className="pl-4 flex items-center gap-3">
             <svg
@@ -46,23 +54,24 @@ const Navbar = () => {
           </button>
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              {/* <div>
+              <div>
                 <Link
-                  to="/home"
+                  to="/"
                   className={`block py-2 pl-3 pr-4   rounded md:bg-transparent text-gray-900 md:p-0 dark:text-white md:dark:text-blue-500 ${
-                    location.pathname === "/home" ? "active" : ""
+                    location.pathname === "/" ? "active" : ""
                   }`}
                   aria-current="page"
                 >
                   Home
                 </Link>
-              </div> */}
+              </div>
               <div>
                 <Link
                   to="/about"
                   className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${
                     location.pathname === "/about" ? "active" : ""
                   }`}
+                  onClick={() => resetfunc}
                 >
                   About
                 </Link>
@@ -71,8 +80,9 @@ const Navbar = () => {
                 <Link
                   to="/pyqs"
                   className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${
-                    location.pathname === "/pyqs" ? "active" : ""
+                    location.pathname.includes("/pyqs") ? "active" : ""
                   }`}
+                  onClick={() => resetfunc}
                 >
                   PYQs
                 </Link>
@@ -81,8 +91,9 @@ const Navbar = () => {
                 <Link
                   to="/assignments"
                   className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${
-                    location.pathname === "/assignments" ? "active" : ""
+                    location.pathname.includes("/assignments") ? "active" : ""
                   }`}
+                  onClick={() => resetfunc}
                 >
                   Assignments
                 </Link>
@@ -91,8 +102,9 @@ const Navbar = () => {
                 <Link
                   to="/syllabus"
                   className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${
-                    location.pathname === "/syllabus" ? "active" : ""
+                    location.pathname.includes("/syllabus") ? "active" : ""
                   }`}
+                  onClick={() => resetfunc}
                 >
                   Syllabus
                 </Link>

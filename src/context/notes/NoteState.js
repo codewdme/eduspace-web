@@ -7,6 +7,7 @@ const NoteState = (props) => {
   const [uploadInfo, setUploadInfo] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedSem, setSelectedSem] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const semesterOptions = [1, 2, 3, 4, 5, 6, 7, 8];
   const courseOptions = [
@@ -23,9 +24,7 @@ const NoteState = (props) => {
     setSelectedSem(sem);
     setLoading(true);
     setTimeout(async () => {
-      console.log(sem);
-      let url = `https://naughty-lion-train.cyclic.app/edgerunners/junexus/fetchfileinfo/${courseName}/${sem}`;
-      console.log(url);
+      let url = `https://naughty-lion-train.cyclic.app/edgerunners/junexus/fetchfileinfo/${selectedCategory}/${courseName}/${sem}`;
 
       const response = await fetch(url, {
         method: "GET",
@@ -77,6 +76,8 @@ const NoteState = (props) => {
         setUploadInfo,
         fetchFiles,
         addFiles,
+        setSelectedCategory,
+        setSelectedSem,
         selectedSem,
         loading,
 

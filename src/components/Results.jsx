@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import File from "./File";
 import noteContext from "../context/notes/noteContext";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Loading from "./Loading";
 
 const Results = () => {
   const propData = useContext(noteContext);
+  const location = useLocation();
 
   // on componetn mount it calls the fetchfiles function to get fileInfo data from backend API;
   // useEffect(() => {
@@ -19,35 +20,30 @@ const Results = () => {
   } else {
     if (propData.state.length === 0) {
       return (
-        <div className={propData.selectedSem ? "hidden" : ""}>
-          <div className="flex flex-col gap-8 p-8 ">
-            <div className="flex justify-between items-center gap-2">
-              <p className="text-center text-xl font-extrabold ">
-                Semester{" "}
-                {propData.state.slice(0, 1).map((element) => {
-                  return element.semester;
-                })}
-              </p>
-              <div className=" flex gap-4 items-center text-sm">
-                <Link
-                  to="/choosesem"
-                  className="p-2 px-4 bg-blue-600 text-white hover:scale-105 rounded-md flex items-center "
-                >
-                  Change Sem
-                </Link>
-                <Link
-                  to="/choosecourse"
-                  className="p-2 px-4 bg-blue-600 text-white hover:scale-105 rounded-md flex items-center"
-                >
-                  Change Course
-                </Link>
-              </div>
+        <div className="flex flex-col gap-8 p-8 ">
+          <div className="flex justify-between items-center gap-2">
+            <p className="text-center text-xl font-extrabold ">
+              Semester {propData.selectedSem}
+            </p>
+            <div className=" flex gap-4 items-center text-sm">
+              <Link
+                to={`${location.pathname.replace("results", "choosesem")}`}
+                className="p-2 px-4 bg-blue-600 text-white hover:scale-105 rounded-md flex items-center "
+              >
+                Change Sem
+              </Link>
+              <Link
+                to={`${location.pathname.replace("/results", "")}`}
+                className="p-2 px-4 bg-blue-600 text-white hover:scale-105 rounded-md flex items-center"
+              >
+                Change Course
+              </Link>
             </div>
-            <div className=" p-8 text-center font-bold">
-              The content you are searching for is not updated yet. It will be
-              updated soon.
-              <br /> We apologize for the inconvenience caused.
-            </div>
+          </div>
+          <div className=" p-8 text-center font-bold">
+            The content you are searching for is not updated yet. It will be
+            updated soon.
+            <br /> We apologize for the inconvenience caused.
           </div>
         </div>
       );
