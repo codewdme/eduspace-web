@@ -5,7 +5,7 @@ import { useContext } from "react";
 
 import ChooseCourse from "./ChooseCourse";
 
-const Assignments = () => {
+const Notes = () => {
   const propData = useContext(noteContext);
   const location = useLocation();
 
@@ -21,4 +21,4 @@ const Assignments = () => {
   );
 };
 
-export default Assignments;
+export default Notes;

@@ -13,6 +13,7 @@ import AddFileInfoForm from "./components/AddFileInfoForm";
 import Validation from "./components/Validation";
 import StudyMaterial from "./components/StudyMaterial";
 import Home from "./components/Home";
+import Notes from "./components/Notes";
 const App = () => {
   return (
     <NoteState>
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/pyqs" element={<Pyqs />} />
             <Route path="/results" element={<Results />} />
+            <Route path="/notes" element={<Notes />} />
             {/* course routes */}
             <Route path="/pyqs/choosecourse" element={<ChooseCourse />} />
             <Route path="/syllabus/choosecourse" element={<ChooseCourse />} />
