@@ -17,12 +17,7 @@ const Assignments = () => {
 
   return (
     <>
-      <div className={`${propData.state.length === 0 ? "" : "hidden"}`}>
-        <ChooseCourse />
-      </div>
-      <div className={`${propData.state.length === 0 ? "hidden" : ""}`}>
-        <Results />
-      </div>
+      <ChooseCourse />
     </>
   );
 };

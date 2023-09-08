@@ -15,7 +15,7 @@ const Results = () => {
   //   console.log(`Results`, propData.state);
   // }, []);
 
-  if (propData.loading === true) {
+  if (propData.loading) {
     return <Loading />;
   } else {
     if (propData.state.length === 0) {

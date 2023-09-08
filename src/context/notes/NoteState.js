@@ -36,8 +36,8 @@ const NoteState = (props) => {
       const json = await response.json();
 
       setState(json);
-    }, 1500);
-    setLoading(false);
+      setLoading(false);
+    }, 500);
   }
 
   // ADDING FILE INFO TO DB
@@ -78,6 +78,7 @@ const NoteState = (props) => {
         addFiles,
         setSelectedCategory,
         setSelectedSem,
+        setLoading,
         selectedSem,
         loading,
 
