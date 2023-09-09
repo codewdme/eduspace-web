@@ -8,6 +8,7 @@ const NoteState = (props) => {
   const [loading, setLoading] = useState(false);
   const [selectedSem, setSelectedSem] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [sectionHeading, setSectionHeading] = useState("");
 
   const semesterOptions = [1, 2, 3, 4, 5, 6, 7, 8];
   const courseOptions = [
@@ -80,9 +81,10 @@ const NoteState = (props) => {
         setSelectedCategory,
         setSelectedSem,
         setLoading,
+        setSectionHeading,
         selectedSem,
         loading,
-
+        sectionHeading,
         state,
         courseName,
         semesterOptions,

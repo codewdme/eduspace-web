@@ -16,7 +16,9 @@ const Notes = () => {
 
   return (
     <>
-      <ChooseCourse />
+      <div className="section flex flex-col ">
+        <ChooseCourse />
+      </div>
     </>
   );
 };

@@ -18,7 +18,7 @@ const App = () => {
   return (
     <NoteState>
       <Router>
-        <div>
+        <div className="flex ">
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />

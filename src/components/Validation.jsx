@@ -46,14 +46,13 @@ const Validation = () => {
               onChange={onChange}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="fileDownloadUrl"
-              type="password"
-              placeholder="**************"
+              type="text"
             />
           </div>
 
           <div className="flex items-center justify-between">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="p-2 px-4 transition hover:ease-in-out text-black border-2 border-white hover:border-black shadow-lg hover:scale-105 rounded-md flex items-center "
               type="button"
               onClick={handleClick}
             >

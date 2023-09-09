@@ -30,7 +30,7 @@ const AddFileInfoForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center p-16 ">
+    <div className=" section flex justify-center items-center p-16 ">
       <div className="w-full  ">
         <form className="bg-white flex flex-col gap-4 rounded ">
           <div className="grid grid-cols-2 gap-4">
@@ -174,7 +174,7 @@ const AddFileInfoForm = () => {
 
           <div className="flex items-center justify-between mt-4">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="p-2 px-4 transition hover:ease-in-out text-black border-2 border-white hover:border-black shadow-lg hover:scale-105 rounded-md flex items-center "
               type="button"
               onClick={handleClick}
             >

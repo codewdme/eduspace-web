@@ -4,7 +4,6 @@ import noteContext from "../context/notes/noteContext";
 import { useContext } from "react";
 
 import ChooseCourse from "./ChooseCourse";
-import Results from "./Results";
 
 const Syllabus = () => {
   const propData = useContext(noteContext);
@@ -16,9 +15,9 @@ const Syllabus = () => {
   });
 
   return (
-    <>
+    <div className="section flex flex-col ">
       <ChooseCourse />
-    </>
+    </div>
   );
 };
 

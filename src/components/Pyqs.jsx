@@ -16,9 +16,9 @@ const Pyqs = () => {
   });
 
   return (
-    <>
+    <div className="section flex flex-col ">
       <ChooseCourse />
-    </>
+    </div>
   );
 };
 

@@ -20,79 +20,98 @@ const Results = () => {
   } else {
     if (propData.state.length === 0) {
       return (
-        <div className="flex flex-col gap-8 p-8 ">
-          <div className="flex justify-between items-center gap-2">
-            <p className="text-center text-xl font-extrabold ">
-              Semester {propData.selectedSem}
+        <div className=" section flex flex-col gap-4 p-8 ">
+          <div>
+            <p className="p-2  text-left text-4xl font-extrabold  ">
+              {propData.sectionHeading}
             </p>
-            <div className=" flex gap-4 items-center text-sm">
-              <Link
-                to={`${location.pathname.replace("results", "choosesem")}`}
-                className="p-2 px-4 bg-blue-600 text-white hover:scale-105 rounded-md flex items-center "
-              >
-                Change Sem
-              </Link>
-              <Link
-                to={`${location.pathname.replace("/results", "")}`}
-                className="p-2 px-4 bg-blue-600 text-white hover:scale-105 rounded-md flex items-center"
-              >
-                Change Course
-              </Link>
-            </div>
           </div>
-          <div className=" p-8 text-center font-bold">
-            The content you are searching for is not updated yet. It will be
-            updated soon.
-            <br /> We apologize for the inconvenience caused.
-          </div>
-        </div>
-      );
-    } else {
-      return (
-        <div className="flex flex-col gap-8 p-8 ">
           <div className="flex justify-between items-center gap-2">
             <div className="flex  items-center gap-2 ">
               <p className="text-center text-md font-bold  ">
                 {propData.course}
               </p>
               <p className="text-center text-md font-bold  ">
-                Semester{" "}
-                {propData.state.slice(0, 1).map((element) => {
-                  return element.semester;
-                })}
+                {propData.courseName} / Semester {propData.selectedSem}
               </p>
             </div>
-            <div className=" flex gap-4 items-center text-sm">
+            {/* Change sem and change course buttons */}
+            <div className=" flex gap-4 items-center text-sm font-medium ">
               <Link
                 to={`${location.pathname.replace("results", "choosesem")}`}
-                className="p-2 px-4 bg-blue-600 text-white hover:scale-105 rounded-md flex items-center "
+                className="p-2 px-4 transition hover:ease-in-out text-black border-2 border-white hover:border-black shadow-lg hover:scale-105 rounded-md flex items-center "
               >
                 Change Sem
               </Link>
               <Link
                 to={`${location.pathname.replace("/results", "")}`}
-                className="p-2 px-4 bg-blue-600 text-white hover:scale-105 rounded-md flex items-center"
+                className="p-2 px-4 transition hover:ease-in-out text-black border-2 border-white hover:border-black shadow-lg hover:scale-105 rounded-md flex items-center "
+              >
+                Change Course
+              </Link>
+            </div>
+          </div>
+          <div className="flex justify-center items-center mt-10">
+            <div className=" p-8 text-center font-bold">
+              The content you are searching for is not updated yet. It will be
+              updated soon.
+              <br /> We apologize for the inconvenience caused.
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className=" section flex flex-col gap-4 p-8 ">
+          <div>
+            <p className="p-2  text-left text-4xl font-extrabold  ">
+              {propData.sectionHeading}
+            </p>
+          </div>
+          <div className="flex justify-between items-center gap-2">
+            <div className="flex  items-center gap-2 ">
+              <p className="text-center text-md font-bold  ">
+                {propData.course}
+              </p>
+              <p className="text-center text-md font-bold  ">
+                {propData.courseName} / Semester {propData.selectedSem}
+              </p>
+            </div>
+            {/* Change sem and change course buttons */}
+            <div className=" flex gap-4 items-center text-sm font-medium ">
+              <Link
+                to={`${location.pathname.replace("results", "choosesem")}`}
+                className="p-2 px-4 transition hover:ease-in-out text-black border-2 border-white hover:border-black shadow-lg hover:scale-105 rounded-md flex items-center "
+              >
+                Change Sem
+              </Link>
+              <Link
+                to={`${location.pathname.replace("/results", "")}`}
+                className="p-2 px-4 transition hover:ease-in-out text-black border-2 border-white hover:border-black shadow-lg hover:scale-105 rounded-md flex items-center "
               >
                 Change Course
               </Link>
             </div>
           </div>
 
-          <div className="grid grid-cols-1  gap-8  ">
-            {propData.state.map((element) => {
-              return (
-                <div key={element._id}>
-                  <File
-                    title={element.fileName}
-                    year={element.year}
-                    fileUrl={element.fileUrl}
-                    fileDownloadUrl={element.fileDownloadUrl}
-                    examName={element.examName}
-                    semester={element.semester}
-                  />
-                </div>
-              );
-            })}
+          {/* Content cards */}
+          <div className="flex justify-center items-center mt-10">
+            <div className="flex flex-wrap gap-8  ">
+              {propData.state.map((element) => {
+                return (
+                  <div key={element._id}>
+                    <File
+                      title={element.fileName}
+                      year={element.year}
+                      fileUrl={element.fileUrl}
+                      fileDownloadUrl={element.fileDownloadUrl}
+                      examName={element.examName}
+                      semester={element.semester}
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       );

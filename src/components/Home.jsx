@@ -3,7 +3,13 @@ import background from "../assets/video.mp4";
 
 const Home = () => {
   return (
-    <div className=" object-contain ">
+    <div className="section">
+      <video className="videoTag" autoPlay loop muted>
+        <source src={background} type="video/mp4" />
+      </video>
+      <video className="videoTag" autoPlay loop muted>
+        <source src={background} type="video/mp4" />
+      </video>
       <video className="videoTag" autoPlay loop muted>
         <source src={background} type="video/mp4" />
       </video>
