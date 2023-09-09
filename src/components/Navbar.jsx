@@ -13,9 +13,12 @@ const Navbar = () => {
     propData.setCourseName(null);
   };
   return (
-    <div className="sticky top-0 left-0 w-[20%] h-screen bg-off-white p-2 border-r-2 border-border-grey">
-      <div className="w-full flex flex-col justify-between p-8 gap-3 rounded-xl shadow-md ">
-        <Link to="/" className=" rounded-xl flex items-center gap-3 ">
+    <div className="sticky top-0 z-10 md:left-0  w-full md:w-[20%] md:h-screen bg-off-white md:p-2 border-r-2 border-border-grey">
+      <div className="w-full flex flex-col justify-between  p-3 md:p-8 gap-3 md:rounded-xl shadow-md ">
+        <Link
+          to="/"
+          className=" rounded-xl flex justify-center items-center gap-3 "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1.3rem"
@@ -26,71 +29,74 @@ const Navbar = () => {
           <span className="self-center text-2xl font-semibold ">JU NEXUS</span>
         </Link>
 
-        <div className="">
-          <Link
-            to="/"
-            className={` navbar-item ${
-              location.pathname === "/" ? "active" : ""
-            }`}
-            aria-current="page"
-          >
-            Home
-          </Link>
-        </div>
-        <div>
-          <Link
-            to="/about"
-            className={`navbar-item ${
-              location.pathname === "/about" ? "active" : ""
-            }`}
-            onClick={() => resetfunc}
-          >
-            About
-          </Link>
-        </div>
-        <div>
-          <Link
-            to="/notes"
-            className={`navbar-item ${
-              location.pathname.includes("/notes") ? "active" : ""
-            }`}
-            onClick={() => resetfunc}
-          >
-            Notes
-          </Link>
-        </div>
-        <div>
-          <Link
-            to="/pyqs"
-            className={`navbar-item ${
-              location.pathname.includes("/pyqs") ? "active" : ""
-            }`}
-            onClick={() => resetfunc}
-          >
-            PYQs
-          </Link>
-        </div>
-        <div>
-          <Link
-            to="/assignments"
-            className={`navbar-item ${
-              location.pathname.includes("/assignments") ? "active" : ""
-            }`}
-            onClick={() => resetfunc}
-          >
-            Assignments
-          </Link>
-        </div>
-        <div>
-          <Link
-            to="/syllabus"
-            className={`navbar-item ${
-              location.pathname.includes("/syllabus") ? "active" : ""
-            }`}
-            onClick={() => resetfunc}
-          >
-            Syllabus
-          </Link>
+        {/* second part of navbar */}
+        <div className="flex justify-between md:flex-col">
+          <div className="">
+            <Link
+              to="/"
+              className={` navbar-item ${
+                location.pathname === "/" ? "active" : ""
+              }`}
+              aria-current="page"
+            >
+              Home
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="/about"
+              className={`navbar-item ${
+                location.pathname === "/about" ? "active" : ""
+              }`}
+              onClick={() => resetfunc}
+            >
+              About
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="/notes"
+              className={`navbar-item ${
+                location.pathname.includes("/notes") ? "active" : ""
+              }`}
+              onClick={() => resetfunc}
+            >
+              Notes
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="/pyqs"
+              className={`navbar-item ${
+                location.pathname.includes("/pyqs") ? "active" : ""
+              }`}
+              onClick={() => resetfunc}
+            >
+              PYQs
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="/assignments"
+              className={`navbar-item ${
+                location.pathname.includes("/assignments") ? "active" : ""
+              }`}
+              onClick={() => resetfunc}
+            >
+              Assignments
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="/syllabus"
+              className={`navbar-item ${
+                location.pathname.includes("/syllabus") ? "active" : ""
+              }`}
+              onClick={() => resetfunc}
+            >
+              Syllabus
+            </Link>
+          </div>
         </div>
       </div>
     </div>

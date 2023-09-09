@@ -13,6 +13,12 @@ const Home = () => {
       <video className="videoTag" autoPlay loop muted>
         <source src={background} type="video/mp4" />
       </video>
+      <video className="videoTag" autoPlay loop muted>
+        <source src={background} type="video/mp4" />
+      </video>
+      <video className="videoTag" autoPlay loop muted>
+        <source src={background} type="video/mp4" />
+      </video>
     </div>
   );
 };

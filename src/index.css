@@ -12,7 +12,7 @@ body  {
   
 }
 .section{
-  @apply w-[80%];
+  @apply  w-[100%] md:w-[80%];
 }
 
 .active{

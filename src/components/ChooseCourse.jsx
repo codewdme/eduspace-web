@@ -23,7 +23,7 @@ const ChooseCourse = () => {
           {propData.sectionHeading}
         </p>
       </div>
-      <div className="grid grid-cols-4 items-center justify-center p-6 text-lg gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center p-6 text-lg gap-6">
         {propData.courseOptions.map((element) => {
           return (
             <Link
