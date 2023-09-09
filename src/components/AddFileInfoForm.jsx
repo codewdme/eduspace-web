@@ -11,6 +11,8 @@ const AddFileInfoForm = () => {
     examName: "",
     course: "",
     semester: null,
+    category: "",
+    author: "",
     fileUrl: "",
     fileDownloadUrl: "",
     year: null,
@@ -126,6 +128,21 @@ const AddFileInfoForm = () => {
             <div className="">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="author"
+              >
+                AUTHOR
+              </label>
+              <input
+                onChange={onChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="author"
+                type="text"
+                placeholder="unknown / edgerunners / 'name' "
+              />
+            </div>
+            <div className="col-span-2">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="fileUrl"
               >
                 FILE URL
@@ -138,7 +155,7 @@ const AddFileInfoForm = () => {
                 placeholder="https://drive.google.com/file/d/1wPpzYwC6Gl-bKQA7GxY5mCS632_bV5RM/view"
               />
             </div>
-            <div className="">
+            <div className="col-span-2">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="fileDownloadUrl"

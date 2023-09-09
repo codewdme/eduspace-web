@@ -43,7 +43,7 @@ const NoteState = (props) => {
   // ADDING FILE INFO TO DB
   async function addFiles() {
     let url = `https://naughty-lion-train.cyclic.app/edgerunners/junexus/addfileinfo`;
-
+    console.log("run");
     const response = await fetch(url, {
       method: "POST",
 
@@ -53,6 +53,7 @@ const NoteState = (props) => {
 
       body: JSON.stringify(uploadInfo),
     });
+    console.log("run");
     const json = await response.json();
 
     setState(json);

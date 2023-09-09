@@ -11,8 +11,10 @@ const Validation = () => {
   const handleClick = async () => {
     if (password === "@-edgerunners-junexus" && propData.uploadInfo !== []) {
       console.log(propData.uploadInfo);
-      //   let message = await propData.addFiles();
-      //   alert(message);
+      let message = await propData.addFiles();
+      console.log(message);
+      alert("file uploaded");
+      navigate("/addfileinfoform");
     } else if (
       password === "@-edgerunners-junexus" &&
       propData.uploadInfo === []

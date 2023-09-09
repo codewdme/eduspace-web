@@ -64,13 +64,13 @@ const Results = () => {
             </div>
             <div className=" flex gap-4 items-center text-sm">
               <Link
-                to="/choosesem"
+                to={`${location.pathname.replace("results", "choosesem")}`}
                 className="p-2 px-4 bg-blue-600 text-white hover:scale-105 rounded-md flex items-center "
               >
                 Change Sem
               </Link>
               <Link
-                to="/choosecourse"
+                to={`${location.pathname.replace("/results", "")}`}
                 className="p-2 px-4 bg-blue-600 text-white hover:scale-105 rounded-md flex items-center"
               >
                 Change Course
