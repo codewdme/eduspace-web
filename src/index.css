@@ -7,21 +7,20 @@
   background-color:#ffffff ;
 }
 
-body  {
+
+body {
   margin: 0;
-  
 }
 .section{
-  @apply  w-[100%] md:w-[80%];
+  @apply  w-[100%] ;
 }
 
 .active{
-  @apply text-white bg-black rounded-lg transition ease-in-out scale-110;
+  @apply text-white fill-white bg-black border-none  rounded-xl transition ease-in-out scale-110;
 } 
 
 
 
 .navbar-item{
-  @apply p-2 block text-xs lg:text-sm font-bold  ;
- 
+  @apply   text-center md:text-left p-2 pr-4  border-l-2 rounded-xl border-white transition ease-in-out hover:border-black hover:scale-110 hover:shadow-lg  block text-xs md:text-sm font-bold  ;
 }

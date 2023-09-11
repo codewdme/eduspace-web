@@ -9,11 +9,13 @@ const NoteState = (props) => {
   const [selectedSem, setSelectedSem] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [sectionHeading, setSectionHeading] = useState("");
+  const [homePageNavbarVisibility, setHomePageNavbarVisibility] =
+    useState(false);
 
   const semesterOptions = [1, 2, 3, 4, 5, 6, 7, 8];
   const courseOptions = [
     "B.Tech",
-    "B.Com",
+    "BCA",
     "B.Sc",
     "Hospitality",
     "Humanties",
@@ -82,6 +84,8 @@ const NoteState = (props) => {
         setSelectedSem,
         setLoading,
         setSectionHeading,
+        setHomePageNavbarVisibility,
+        homePageNavbarVisibility,
         selectedSem,
         loading,
         sectionHeading,

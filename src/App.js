@@ -14,44 +14,48 @@ import Validation from "./components/Validation";
 import StudyMaterial from "./components/StudyMaterial";
 import Home from "./components/Home";
 import Notes from "./components/Notes";
+import Footer from "./components/Footer";
 const App = () => {
   return (
     <NoteState>
       <Router>
         <div className="flex flex-col md:flex-row">
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/pyqs" element={<Pyqs />} />
-            <Route path="/results" element={<Results />} />
-            <Route path="/notes" element={<Notes />} />
-            {/* course routes */}
-            <Route path="/pyqs/choosecourse" element={<ChooseCourse />} />
-            <Route path="/syllabus/choosecourse" element={<ChooseCourse />} />
-            <Route
-              path="/assignments/choosecourse"
-              element={<ChooseCourse />}
-            />
-            <Route path="/notes/choosecourse" element={<ChooseCourse />} />
+          <div className="w-full flex flex-col ">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/pyqs" element={<Pyqs />} />
+              <Route path="/results" element={<Results />} />
+              <Route path="/notes" element={<Notes />} />
+              {/* course routes */}
+              <Route path="/pyqs/choosecourse" element={<ChooseCourse />} />
+              <Route path="/syllabus/choosecourse" element={<ChooseCourse />} />
+              <Route
+                path="/assignments/choosecourse"
+                element={<ChooseCourse />}
+              />
+              <Route path="/notes/choosecourse" element={<ChooseCourse />} />
 
-            {/* sem routes */}
-            <Route path="/pyqs/choosesem" element={<ChooseSem />} />
-            <Route path="/syllabus/choosesem" element={<ChooseSem />} />
-            <Route path="/assignments/choosesem" element={<ChooseSem />} />
-            <Route path="/notes/choosesem" element={<ChooseSem />} />
-            {/* results routes */}
-            <Route path="/pyqs/results" element={<Results />} />
-            <Route path="/syllabus/results" element={<Results />} />
-            <Route path="/assignments/results" element={<Results />} />
-            <Route path="/notes/results" element={<Results />} />
+              {/* sem routes */}
+              <Route path="/pyqs/choosesem" element={<ChooseSem />} />
+              <Route path="/syllabus/choosesem" element={<ChooseSem />} />
+              <Route path="/assignments/choosesem" element={<ChooseSem />} />
+              <Route path="/notes/choosesem" element={<ChooseSem />} />
+              {/* results routes */}
+              <Route path="/pyqs/results" element={<Results />} />
+              <Route path="/syllabus/results" element={<Results />} />
+              <Route path="/assignments/results" element={<Results />} />
+              <Route path="/notes/results" element={<Results />} />
 
-            <Route path="/assignments" element={<Assignments />} />
-            <Route path="/syllabus" element={<Syllabus />} />
-            <Route path="/addfileinfoform" element={<AddFileInfoForm />} />
-            <Route path="/validation" element={<Validation />} />
-            <Route path="/studymaterial" element={<StudyMaterial />} />
-          </Routes>
+              <Route path="/assignments" element={<Assignments />} />
+              <Route path="/syllabus" element={<Syllabus />} />
+              <Route path="/addfileinfoform" element={<AddFileInfoForm />} />
+              <Route path="/validation" element={<Validation />} />
+              <Route path="/studymaterial" element={<StudyMaterial />} />
+            </Routes>
+            <Footer />
+          </div>
         </div>
       </Router>
     </NoteState>

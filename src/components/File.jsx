@@ -2,7 +2,7 @@ import React from "react";
 
 const File = (props) => {
   return (
-    <div className=" relative flex flex-col h-[21rem] w-[15rem] justify-between  items-center border-2 border-border-grey cursor-pointer rounded-xl hover:shadow-2xl hover:scale-[101%] transition hover:ease-in-out  overflow-hidden">
+    <div className=" relative flex flex-col h-[18rem] w-[15rem] justify-between  items-center border-2 border-border-grey cursor-pointer rounded-xl hover:shadow-2xl hover:scale-[101%] transition hover:ease-in-out  overflow-hidden">
       {/* icon */}
       <a
         className="flex  flex-col text-left w-full justify-between  
@@ -10,9 +10,9 @@ const File = (props) => {
         href={props.fileUrl}
         target="_blank"
       >
-        <div className="flex flex-col text-left w-full h-[18rem]">
+        <div className="flex flex-col text-left w-full h-[12rem]">
           <svg
-            className="w-full h-[50%] bg-black  fill-white p-4"
+            className="w-full h-[60%] bg-black  fill-white p-4"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 384 512"
           >
@@ -27,8 +27,9 @@ const File = (props) => {
           <span className="bg-border-grey h-[2px] w-[90%] self-center rounded-sm"></span>
 
           <div className="flex gap-2 text-xs font-medium justify-center items-center p-2">
-            <p>{props.examName}</p>
+            <p>{props.course}</p>
             <p>SEM-{props.semester}</p>
+            <p>{props.examName === "NULL" ? "" : props.examName}</p>
             <p>{props.year}</p>
           </div>
         </div>

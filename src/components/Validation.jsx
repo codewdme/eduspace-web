@@ -8,6 +8,12 @@ const Validation = () => {
 
   const [password, setPassword] = useState("");
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleClick();
+    }
+  };
+
   const handleClick = async () => {
     if (password === "@-edgerunners-junexus" && propData.uploadInfo !== []) {
       console.log(propData.uploadInfo);
@@ -34,7 +40,7 @@ const Validation = () => {
   return (
     <div className="flex justify-center items-center p-16 ">
       <div className="w-full ">
-        <form className="bg-white flex flex-col gap-4 rounded ">
+        <div className="bg-white flex flex-col gap-4 rounded ">
           <div className="">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -44,6 +50,7 @@ const Validation = () => {
             </label>
             <input
               onChange={onChange}
+              onKeyDown={handleKeyDown}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="fileDownloadUrl"
               type="text"
@@ -59,7 +66,7 @@ const Validation = () => {
               Proceed
             </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

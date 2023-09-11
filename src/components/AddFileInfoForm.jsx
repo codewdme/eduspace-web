@@ -20,13 +20,31 @@ const AddFileInfoForm = () => {
 
   const handleClick = () => {
     propData.setUploadInfo(formData);
+    console.log(formData);
     setTimeout(() => {
       navigate("/validation");
     }, 1000);
   };
 
   const onChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
+    if (e.target.id === "fileUrl") {
+      const downloadLink = e.target.value
+        .replace(
+          "https://drive.google.com/file/d/",
+          "https://drive.google.com/u/0/uc?id="
+        )
+        .replace("/view", "&export=download");
+      console.log("donload link ", downloadLink);
+      console.log(formData.fileDownloadUrl);
+      setFormData({
+        ...formData,
+        fileDownloadUrl: downloadLink,
+        [e.target.id]: e.target.value,
+      });
+      console.log(formData.fileDownloadUrl);
+    } else {
+      setFormData({ ...formData, [e.target.id]: e.target.value });
+    }
   };
 
   return (
@@ -91,7 +109,7 @@ const AddFileInfoForm = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="fileName"
                 type="text"
-                placeholder="APPLIED PHYSICS"
+                placeholder="Applied Physics"
               />
             </div>
 
@@ -100,14 +118,14 @@ const AddFileInfoForm = () => {
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="examName"
               >
-                EXAM NAME
+                EXAM NAME / UNIT-N0.
               </label>
               <input
                 onChange={onChange}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="examName"
                 type="text"
-                placeholder="END SEM >> if not a question paper then >> NULL"
+                placeholder="END SEM or UNIT NO. >> if assignment,syllabus then >> NULL"
               />
             </div>
             <div className="">
@@ -154,22 +172,27 @@ const AddFileInfoForm = () => {
                 type="text"
                 placeholder="https://drive.google.com/file/d/1wPpzYwC6Gl-bKQA7GxY5mCS632_bV5RM/view"
               />
+
+              <p className="block text-black text-xs font-bold mb-2">
+                DOWNLOAD URL : {"   "}
+                <span className=" font-base">{formData.fileDownloadUrl}</span>
+              </p>
             </div>
-            <div className="col-span-2">
+            {/* <div className="col-span-2">
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-gray-300 text-sm font-bold mb-2"
                 htmlFor="fileDownloadUrl"
               >
-                DIRECT DOWNLOAD URL
+                {formData.fileDownloadUrl}
               </label>
               <input
-                onChange={onChange}
+                onChange={onchange}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="fileDownloadUrl"
                 type="text"
                 placeholder="https://drive.google.com/u/0/uc?id=1wPpzYwC6Gl-bKQA7GxY5mCS632_bV5RM&export=download"
               />
-            </div>
+            </div> */}
           </div>
 
           <div className="flex items-center justify-between mt-4">
@@ -182,9 +205,6 @@ const AddFileInfoForm = () => {
             </button>
           </div>
         </form>
-        <p className="p-12 text-center text-gray-500 text-xs">
-          &copy;2023 EdgeRunners Corp. All rights reserved.
-        </p>
       </div>
     </div>
   );

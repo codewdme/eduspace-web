@@ -26,8 +26,8 @@ const Results = () => {
               {propData.sectionHeading}
             </p>
           </div>
-          <div className="flex flex-wrap justify-between items-center gap-2">
-            <div className="flex items-center gap-2 ">
+          <div className="flex flex-wrap  justify-between items-center gap-2">
+            <div className="flex  items-center gap-2 ">
               <p className="text-center text-md font-bold  ">
                 {propData.course}
               </p>
@@ -36,7 +36,7 @@ const Results = () => {
               </p>
             </div>
             {/* Change sem and change course buttons */}
-            <div className=" flex gap-4 items-center text-sm font-medium ">
+            <div className="w-full md:w-auto flex gap-4 justify-center items-center text-sm font-medium ">
               <Link
                 to={`${location.pathname.replace("results", "choosesem")}`}
                 className="p-2 px-4 transition hover:ease-in-out text-black border-2 border-white hover:border-black shadow-lg hover:scale-105 rounded-md flex items-center "
@@ -51,6 +51,7 @@ const Results = () => {
               </Link>
             </div>
           </div>
+          {/* response for no files */}
           <div className="flex justify-center items-center mt-10">
             <div className=" p-8 text-center font-bold">
               The content you are searching for is not updated yet. It will be
@@ -96,7 +97,7 @@ const Results = () => {
 
           {/* Content cards */}
           <div className="w-full md:w-auto flex  justify-center items-center mt-10">
-            <div className="flex flex-col md:flex-wrap gap-8  ">
+            <div className="flex flex-col md:flex-row flex-wrap gap-8  ">
               {propData.state.map((element) => {
                 return (
                   <div key={element._id}>
@@ -105,6 +106,7 @@ const Results = () => {
                       year={element.year}
                       fileUrl={element.fileUrl}
                       fileDownloadUrl={element.fileDownloadUrl}
+                      course={element.course}
                       examName={element.examName}
                       semester={element.semester}
                     />
