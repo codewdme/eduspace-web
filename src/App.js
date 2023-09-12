@@ -15,6 +15,8 @@ import StudyMaterial from "./components/StudyMaterial";
 import Home from "./components/Home";
 import Notes from "./components/Notes";
 import Footer from "./components/Footer";
+import ChooseSubject from "./components/ChooseSubject";
+
 const App = () => {
   return (
     <NoteState>
@@ -36,6 +38,17 @@ const App = () => {
                 element={<ChooseCourse />}
               />
               <Route path="/notes/choosecourse" element={<ChooseCourse />} />
+              {/* subject routes */}
+              <Route path="/pyqs/choosesubject" element={<ChooseSubject />} />
+              <Route
+                path="/syllabus/choosesubject"
+                element={<ChooseSubject />}
+              />
+              <Route
+                path="/assignments/choosesubject"
+                element={<ChooseSubject />}
+              />
+              <Route path="/notes/choosesubject" element={<ChooseSubject />} />
 
               {/* sem routes */}
               <Route path="/pyqs/choosesem" element={<ChooseSem />} />
@@ -52,7 +65,7 @@ const App = () => {
               <Route path="/syllabus" element={<Syllabus />} />
               <Route path="/addfileinfoform" element={<AddFileInfoForm />} />
               <Route path="/validation" element={<Validation />} />
-              <Route path="/studymaterial" element={<StudyMaterial />} />
+              {/* <Route path="/studymaterial" element={<StudyMaterial />} /> */}
             </Routes>
             <Footer />
           </div>

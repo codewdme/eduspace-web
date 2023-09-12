@@ -42,6 +42,7 @@ const Validation = () => {
       <div className="w-full ">
         <div className="bg-white flex flex-col gap-4 rounded ">
           <div className="">
+            <div className="text-black">{propData.uploadInfo.year}</div>
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="fileDownloadUrl"

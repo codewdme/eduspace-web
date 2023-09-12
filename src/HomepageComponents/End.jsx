@@ -40,9 +40,7 @@ const End = () => {
           >
             <button
               onClick={handleClick}
-              className={`${
-                propData.homePageNavbarVisibility ? "hidden" : ""
-              } sticky z-50 top-8 right-12 p-4 bg-black hover:bg-white text-white hover:text-black text-sm font-semibold border-2 border-white rounded-xl transition hover:ease-in-out hover:scale-110`}
+              className={`sticky z-50 top-8 right-12 p-4 bg-black hover:bg-white text-white hover:text-black text-sm font-semibold border-2 border-white rounded-xl transition hover:ease-in-out hover:scale-110`}
             >
               {" "}
               Get Started{" "}

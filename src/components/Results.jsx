@@ -102,13 +102,15 @@ const Results = () => {
                 return (
                   <div key={element._id}>
                     <File
-                      title={element.fileName}
+                      title={element.subject}
                       year={element.year}
                       fileUrl={element.fileUrl}
                       fileDownloadUrl={element.fileDownloadUrl}
                       course={element.course}
                       examName={element.examName}
                       semester={element.semester}
+                      author={element.author}
+                      unitNo={element.unitNo}
                     />
                   </div>
                 );

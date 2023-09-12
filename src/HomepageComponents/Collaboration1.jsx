@@ -26,24 +26,24 @@ const Collaboration = () => {
     <motion.div
       ref={targetRef}
       style={{ opacity }}
-      className="  bg-black h-[600vh] w-full"
+      className="  bg-black h-[450vh] md:h-[600vh] w-full"
     >
       <div className="  bg-black sticky top-[10vh]">
         <motion.div
           style={{ opacity }}
-          className="  bg-black flex justify-center"
+          className="  bg-black flex flex-col md:flex-row justify-center"
         >
           <motion.div
             style={{ x, scale, opacity }}
             className="  bg-black origin-top object-contain"
           >
-            <p className="px-4 text-2xl md:text-3xl text-white text-center pt-32 bg-black ">
+            <p className="px-4 text-2xl md:text-3xl text-white md:text-center  md:pt-32 bg-black ">
               Meet JU NEXUS
             </p>
           </motion.div>
           <motion.div
             style={{ x, scale, opacity }}
-            className="  bg-black origin-top object-contain"
+            className="  bg-black origin-top object-contain w-[full]"
           >
             <motion.img
               src={desktopMockup}

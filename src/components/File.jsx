@@ -30,6 +30,7 @@ const File = (props) => {
             <p>{props.course}</p>
             <p>SEM-{props.semester}</p>
             <p>{props.examName === "NULL" ? "" : props.examName}</p>
+            <p>{props.UnitNo === "NULL" ? "" : ` Unit - ${props.UnitNo}`}</p>
             <p>{props.year}</p>
           </div>
         </div>

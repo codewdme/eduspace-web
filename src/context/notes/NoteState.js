@@ -11,6 +11,8 @@ const NoteState = (props) => {
   const [sectionHeading, setSectionHeading] = useState("");
   const [homePageNavbarVisibility, setHomePageNavbarVisibility] =
     useState(false);
+  const [subjectOptions, setSubjectOptions] = useState([]);
+  const [selectedSubject, setSelectedSubject] = useState("");
 
   const semesterOptions = [1, 2, 3, 4, 5, 6, 7, 8];
   const courseOptions = [
@@ -22,12 +24,36 @@ const NoteState = (props) => {
     "Law",
   ];
 
+  // course-wise-subjects-array
+  const btechCourseSubjects = ["s1", "s2", "s3", "s4", "s5", "s6", "s7"];
+  const bcaCourseSubjects = ["s1", "s2", "s3", "s4", "s5", "s6", "s7"];
+  const bscCourseSubjects = ["s1", "s2", "s3", "s4", "s5", "s6", "s7"];
+  const humantiesCourseSubjects = ["s1", "s2", "s3", "s4", "s5", "s6", "s7"];
+  const lawCourseSubjects = ["s1", "s2", "s3", "s4", "s5", "s6", "s7"];
+  const hospitalityCourseSubjects = ["s1", "s2", "s3", "s4", "s5", "s6", "s7"];
+
+  const updateSubjectOptions = () => {
+    if (courseName === "B.Tech") {
+      setSubjectOptions(btechCourseSubjects);
+    } else if (courseName === "B.Sc") {
+      setSubjectOptions(bscCourseSubjects);
+    } else if (courseName === "BCA") {
+      setSubjectOptions(bcaCourseSubjects);
+    } else if (courseName === "Humanities") {
+      setSubjectOptions(humantiesCourseSubjects);
+    } else if (courseName === "Hospitality") {
+      setSubjectOptions(hospitalityCourseSubjects);
+    } else if (courseName === "Law") {
+      setSubjectOptions(lawCourseSubjects);
+    }
+  };
+
   // api call to fetch files information from backend.
-  async function fetchFiles(sem) {
-    setSelectedSem(sem);
+  async function fetchFiles(subject) {
+    setSelectedSubject(subject);
     setLoading(true);
     setTimeout(async () => {
-      let url = `https://naughty-lion-train.cyclic.app/edgerunners/junexus/fetchfileinfo/${selectedCategory}/${courseName}/${sem}`;
+      let url = `https://naughty-lion-train.cyclic.app/edgerunners/junexus/fetchfileinfo/${selectedCategory}/${courseName}/${selectedSem}/${subject}`;
 
       const response = await fetch(url, {
         method: "GET",
@@ -84,8 +110,11 @@ const NoteState = (props) => {
         setSelectedSem,
         setLoading,
         setSectionHeading,
+        updateSubjectOptions,
+
         setHomePageNavbarVisibility,
         homePageNavbarVisibility,
+        subjectOptions,
         selectedSem,
         loading,
         sectionHeading,

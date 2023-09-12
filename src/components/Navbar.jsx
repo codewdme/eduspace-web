@@ -19,7 +19,7 @@ const Navbar = () => {
         location.pathname === "/" && !propData.homePageNavbarVisibility
           ? "hidden"
           : ""
-      } sticky top-0  md:left-0  w-full md:w-[20%] md:h-screen bg-off-white md:p-2 border-r-2 border-border-grey`}
+      } sticky top-0 z-50  md:left-0  w-full md:w-[20%] md:h-screen bg-off-white md:p-2 border-r-2 border-border-grey`}
     >
       <div className="w-full flex flex-col justify-between  p-3 md:p-8 md:rounded-xl shadow-md ">
         <Link

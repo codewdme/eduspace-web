@@ -1,14 +1,12 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import noteContext from "../context/notes/noteContext";
 import { Link, useLocation } from "react-router-dom";
 
-const ChooseSem = () => {
+const ChooseSubject = () => {
   const propData = useContext(noteContext);
   const location = useLocation();
 
-  setTimeout(() => {
-    propData.updateSubjectOptions();
-  }, 1000);
+  console.log(propData.subjectOptions);
 
   return (
     <div className="section ">
@@ -18,17 +16,18 @@ const ChooseSem = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center p-6 text-lg gap-6">
-        {propData.semesterOptions.map((element) => {
+        {propData.subjectOptions.map((element) => {
+          console.log(element);
           return (
             <Link
               key={element}
-              to={`${location.pathname.replace("choosesem", "choosesubject")}`}
+              to={`${location.pathname.replace("choosesubject", "results")}`}
               className="flex items-center justify-center p-6  bg-blue-200 rounded-xl cursor-pointer  hover:scale-105 transition hover:ease-in-out shadow-lg border-2 border-white hover:border-black font-bold"
               onClick={() => {
-                propData.setSelectedSem(element);
+                propData.fetchfiles(element);
               }}
             >
-              Sem - {element}
+              {element}
             </Link>
           );
         })}
@@ -37,4 +36,4 @@ const ChooseSem = () => {
   );
 };
 
-export default ChooseSem;
+export default ChooseSubject;
