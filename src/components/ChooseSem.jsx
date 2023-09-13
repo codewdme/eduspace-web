@@ -1,14 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import noteContext from "../context/notes/noteContext";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const ChooseSem = () => {
   const propData = useContext(noteContext);
   const location = useLocation();
-
-  setTimeout(() => {
-    propData.updateSubjectOptions();
-  }, 1000);
+  const navigate = useNavigate();
 
   return (
     <div className="section ">
@@ -26,6 +23,8 @@ const ChooseSem = () => {
               className="flex items-center justify-center p-6  bg-blue-200 rounded-xl cursor-pointer  hover:scale-105 transition hover:ease-in-out shadow-lg border-2 border-white hover:border-black font-bold"
               onClick={() => {
                 propData.setSelectedSem(element);
+                propData.updateSubjectOptions();
+                propData.setSubjectsReload(true);
               }}
             >
               Sem - {element}

@@ -1,0 +1,133 @@
+if (inputString.includes("COMMUNICATIONSKILLS")) {
+      automatedIdentifiedSubject = "Communication Skills";
+      automatedIdentifiedSubjectCode = "DEN001A";
+    } else if (inputString.includes("ENGINEERINGMATHEMATICS1")) {
+      automatedIdentifiedSubject = "Engineering Mathematics-I";
+      automatedIdentifiedSubjectCode = "DMA001A";
+    } else if (inputString.includes("APPLIEDPHYSICS")) {
+      automatedIdentifiedSubject = "Applied Physics";
+      automatedIdentifiedSubjectCode = "DPH001A";
+    } else if (inputString.includes("BASICELECTRONICSENGINEERING")) {
+      automatedIdentifiedSubject = "Basic Electronics Engineering";
+      automatedIdentifiedSubjectCode = "DEE001A";
+    } else if (inputString.includes("APPLIEDPHYSICSLAB")) {
+      automatedIdentifiedSubject = "Applied Physics Lab";
+      automatedIdentifiedSubjectCode = "DPH002A";
+    } else if (inputString.includes("ENGINEERINGGRAPHICSAUTOCAD")) {
+      automatedIdentifiedSubject = "Engineering Graphics-Auto Cad";
+      automatedIdentifiedSubjectCode = "DME001A";
+    } else if (inputString.includes("COMPUTERPROGRAMMINGINC++LAB")) {
+      automatedIdentifiedSubject = "Computer Programming in C++ Lab";
+      automatedIdentifiedSubjectCode = "DCO02A";
+    } else if (inputString.includes("ENVIRONMENTALSCIENCES")) {
+      automatedIdentifiedSubject = "Environmental Sciences";
+      automatedIdentifiedSubjectCode = "DCH001A";
+    } else if (inputString.includes("INDIANCONSTITUTION")) {
+      automatedIdentifiedSubject = "Indian Constitution";
+      automatedIdentifiedSubjectCode = "DLW001A";
+    } else if (inputString.includes("PROFESSIONALSKILLS")) {
+      automatedIdentifiedSubject = "Professional Skills";
+      automatedIdentifiedSubjectCode = "DEN002A";
+    } else if (inputString.includes("ENGINEERINGMATHEMATICSEM2")) {
+      automatedIdentifiedSubject = "Engineering Mathematics-II";
+      automatedIdentifiedSubjectCode = "DMA002A";
+    } else if (inputString.includes("BASICELECTRICALENGINEERING")) {
+      automatedIdentifiedSubject = "Basic Electrical Engineering";
+      automatedIdentifiedSubjectCode = "DEL001A";
+    } else if (inputString.includes("PROGRAMMINGINJAVA")) {
+      automatedIdentifiedSubject = "Programming in Java";
+      automatedIdentifiedSubjectCode = "DCO002A";
+    } else if (inputString.includes("ENGINEERINGCHEMISTRY")) {
+      automatedIdentifiedSubject = "Engineering Chemistry";
+      automatedIdentifiedSubjectCode = "DCH002A";
+    } else if (inputString.includes("CHEMISTRYLAB")) {
+      automatedIdentifiedSubject = "Chemistry Lab";
+      automatedIdentifiedSubjectCode = "DCH003A";
+    } else if (inputString.includes("ENGINEERINGWORKSHOP")) {
+      automatedIdentifiedSubject = "Engineering Workshop";
+      automatedIdentifiedSubjectCode = "SET001A";
+    } else if (inputString.includes("ENVIRONMENTALSCIENCES")) {
+      automatedIdentifiedSubject = "Environmental Sciences";
+      automatedIdentifiedSubjectCode = "DCH001A";
+    } else if (inputString.includes("INDIANCONSTITUTION")) {
+      automatedIdentifiedSubject = "Indian Constitution";
+      automatedIdentifiedSubjectCode = "DLW001A";
+    } else if (inputString.includes("COMPUTERNETWORKS")) {
+      automatedIdentifiedSubject = "Computer Networks";
+      automatedIdentifiedSubjectCode = "BCO011A";
+    } else if (inputString.includes("DATASTRUCTURESANDALGORITHMS")) {
+      automatedIdentifiedSubject = "Data Structures and Algorithms";
+      automatedIdentifiedSubjectCode = "BCO002B";
+    } else if (inputString.includes("DISCRETEMATHEMATICS")) {
+      automatedIdentifiedSubject = "Discrete Mathematics";
+      automatedIdentifiedSubjectCode = "BAS007B";
+    } else if (inputString.includes("OPERATINGSYSTEMS")) {
+      automatedIdentifiedSubject = "Operating Systems";
+      automatedIdentifiedSubjectCode = "BCO008B";
+    } else if (
+      inputString.includes("SOFTWAREENGINEERINGANDPROJECTMANAGEMENT")
+    ) {
+      automatedIdentifiedSubject =
+        "Software Engineering and Project Management";
+      automatedIdentifiedSubjectCode = "BCO232A";
+    } else if (inputString.includes("LIFESKILLS-1(PERSONALITYDEVELOPMENT)")) {
+      automatedIdentifiedSubject = "Life Skills - 1 (Personality Development)";
+      automatedIdentifiedSubjectCode = "DEN003A";
+    } else if (inputString.includes("COMPUTERORGANIZATIONANDDESIGN")) {
+      automatedIdentifiedSubject = "Computer Organization and Design";
+      automatedIdentifiedSubjectCode = "BCO009B";
+    } else if (inputString.includes("DATABASEMANAGEMENTSYSTEMS")) {
+      automatedIdentifiedSubject = "Database Management Systems";
+      automatedIdentifiedSubjectCode = "BCO010C";
+    } else if (inputString.includes("LIFESKILLS-2(APTITUDE)")) {
+      automatedIdentifiedSubject = "Life Skills - 2 (Aptitude)";
+      automatedIdentifiedSubjectCode = "DMA003A";
+    } else if (inputString.includes("DEPARTMENTELECTIVE1(GCCF/SALESFORCE)")) {
+      automatedIdentifiedSubject = "Department Elective 1 (GCCF/SalesForce)";
+      automatedIdentifiedSubjectCode = "NEX0008";
+    } else if (inputString.includes("PYTHONPROGRAMMING")) {
+      automatedIdentifiedSubject = "Python Programming";
+      automatedIdentifiedSubjectCode = "BCO081A";
+    } else if (inputString.includes("FORMALLANGUAGES&AUTOMATIONTHEORY")) {
+      automatedIdentifiedSubject = "Formal Languages & Automation Theory";
+      automatedIdentifiedSubjectCode = "BCO017A";
+    } else if (inputString.includes("DESIGN&ANALYSISOFALGORITHMS")) {
+      automatedIdentifiedSubject = "Design & Analysis of Algorithms";
+      automatedIdentifiedSubjectCode = "BCO023A";
+    } else if (inputString.includes("COMPUTERGRAPHICS")) {
+      automatedIdentifiedSubject = "Computer Graphics";
+      automatedIdentifiedSubjectCode = "BCO007A";
+    } else if (inputString.includes("DEPARTMENTELECTIVE2")) {
+      automatedIdentifiedSubject = "Department Elective 2";
+      automatedIdentifiedSubjectCode = "NEX0001";
+    } else if (inputString.includes("DEPARTMENTELECTIVE2")) {
+      automatedIdentifiedSubject = "Department Elective 2";
+      automatedIdentifiedSubjectCode = "NEX0002";
+    } else if (inputString.includes("ADVANCEJAVA")) {
+      automatedIdentifiedSubject = "Advance JAVA";
+      automatedIdentifiedSubjectCode = "BCO037B";
+    } else if (inputString.includes("COMPILERCONSTRUCTION")) {
+      automatedIdentifiedSubject = "Compiler Construction";
+      automatedIdentifiedSubjectCode = "BCO028A";
+    } else if (inputString.includes("DEPARTMENTELECTIVE4")) {
+      automatedIdentifiedSubject = "Department Elective 4";
+      automatedIdentifiedSubjectCode = "NEX0003";
+    } else if (inputString.includes("DEPARTMENTELECTIVE5")) {
+      automatedIdentifiedSubject = "Department Elective 5";
+      automatedIdentifiedSubjectCode = "NEX0004";
+    } else if (inputString.includes("MINORPROJECT")) {
+      automatedIdentifiedSubject = "Minor Project";
+      automatedIdentifiedSubjectCode = "BCO074B";
+    } else if (inputString.includes("DEPARTMENTELECTIVE6")) {
+      automatedIdentifiedSubject = "Department Elective 6";
+      automatedIdentifiedSubjectCode = "NEX0005";
+    } else if (inputString.includes("DEPARTMENTELECTIVE7")) {
+      automatedIdentifiedSubject = "Department Elective 7";
+      automatedIdentifiedSubjectCode = "NEX0006";
+    } else if (inputString.includes("DEPARTMENTELECTIVE8")) {
+      automatedIdentifiedSubject = "Department Elective 8";
+      automatedIdentifiedSubjectCode = "NEX0007";
+    } else if (inputString.includes("INDUSTRIALPROJECT/DISSERTATION")) {
+      automatedIdentifiedSubject = "Industrial Project/Dissertation";
+      automatedIdentifiedSubjectCode = "BCO034B";
+    }

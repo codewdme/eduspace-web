@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import noteContext from "../context/notes/noteContext";
 import { Link, useLocation } from "react-router-dom";
 
@@ -6,7 +6,12 @@ const ChooseSubject = () => {
   const propData = useContext(noteContext);
   const location = useLocation();
 
-  console.log(propData.subjectOptions);
+  useEffect(() => {
+    if (propData.subjectsReload === true) {
+      propData.updateSubjectOptions();
+    }
+    propData.setSubjectsReload(false);
+  });
 
   return (
     <div className="section ">
@@ -15,19 +20,18 @@ const ChooseSubject = () => {
           {propData.sectionHeading}
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center p-6 text-lg gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center p-6 text-lg gap-6">
         {propData.subjectOptions.map((element) => {
-          console.log(element);
           return (
             <Link
-              key={element}
+              key={element.subjectCode}
               to={`${location.pathname.replace("choosesubject", "results")}`}
-              className="flex items-center justify-center p-6  bg-blue-200 rounded-xl cursor-pointer  hover:scale-105 transition hover:ease-in-out shadow-lg border-2 border-white hover:border-black font-bold"
+              className="text-black text-left flex items-center  p-6  bg-blue-200 rounded-xl cursor-pointer  hover:scale-105 transition hover:ease-in-out shadow-lg border-2 border-white hover:border-black font-bold"
               onClick={() => {
-                propData.fetchfiles(element);
+                // propData.fetchfiles(element.subjectCode);
               }}
             >
-              {element}
+              {element.subjectName}
             </Link>
           );
         })}

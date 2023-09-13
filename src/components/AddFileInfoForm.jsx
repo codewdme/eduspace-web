@@ -7,16 +7,17 @@ const AddFileInfoForm = () => {
   const propData = useContext(noteContext);
   const [formData, setFormData] = useState({
     subject: "",
-    unitNo: 0,
-    assignmentNo: 0,
+    unitNo: "",
+    assignmentNo: "",
     examName: "",
     course: "",
-    semester: 0,
+    subjectCode: "",
+    semester: "",
     category: "",
     author: "",
     fileUrl: "",
     fileDownloadUrl: "",
-    year: 0,
+    year: "",
   });
 
   const handleProceed = () => {
@@ -69,40 +70,6 @@ const AddFileInfoForm = () => {
       var automatedCategoryName = "SYLLABUS";
     }
 
-    // CHECK FOR SEMESTER VALUES
-    if (inputString.includes("SEM1")) {
-      var semesterValue = 1;
-    } else if (inputString.includes("SEM2")) {
-      var semesterValue = 2;
-    } else if (inputString.includes("SEM3")) {
-      var semesterValue = 3;
-    } else if (inputString.includes("SEM4")) {
-      var semesterValue = 4;
-    } else if (inputString.includes("SEM5")) {
-      var semesterValue = 5;
-    } else if (inputString.includes("SEM6")) {
-      var semesterValue = 6;
-    } else if (inputString.includes("SEM7")) {
-      var semesterValue = 7;
-    } else if (inputString.includes("SEM8")) {
-      var semesterValue = 8;
-    }
-
-    // COURSE Identification
-    if (inputString.includes("BTECH")) {
-      var automatedCourseName = "BTECH";
-    } else if (inputString.includes("BCA")) {
-      var automatedCourseName = "BCA";
-    } else if (inputString.includes("BSC")) {
-      var automatedCourseName = "BSC";
-    } else if (inputString.includes("HUMANITIES")) {
-      var automatedCourseName = "HUMANITIES";
-    } else if (inputString.includes("HOSPITALITY")) {
-      var automatedCourseName = "HOSPITALITY";
-    } else if (inputString.includes("LAW")) {
-      var automatedCourseName = "LAW";
-    }
-
     // EXAM Name Identification:
 
     if (inputString.includes("INSEM1")) {
@@ -118,18 +85,19 @@ const AddFileInfoForm = () => {
     }
 
     // CHECK FOR UNIT NO
+    let automatedUnitNo = "";
     if (inputString.includes("UNIT5")) {
-      var automatedUnitNo = 5;
+      automatedUnitNo = "5";
     } else if (inputString.includes("UNIT4")) {
-      var automatedUnitNo = 4;
+      automatedUnitNo = "4";
     } else if (inputString.includes("UNIT3")) {
-      var automatedUnitNo = 3;
+      automatedUnitNo = "3";
     } else if (inputString.includes("UNIT2")) {
-      var automatedUnitNo = 2;
+      automatedUnitNo = "2";
     } else if (inputString.includes("UNIT1")) {
-      var automatedUnitNo = 1;
+      automatedUnitNo = "1";
     } else if (inputString.includes("UNIT6")) {
-      var automatedUnitNo = 6;
+      automatedUnitNo = "6";
     }
 
     //CHECK FOR ASSIGNMENT NO:
@@ -147,36 +115,109 @@ const AddFileInfoForm = () => {
       var automatedAssignmentNo = 6;
     }
 
-    // CHECK FOR SUBJECTNAME:
+    // CHECK FOR YEAR:
     if (inputString.includes("2021")) {
-      var automatedIdentfiedYear = 2021;
+      var automatedIdentfiedYear = "2021";
     } else if (inputString.includes("2022")) {
-      var automatedIdentfiedYear = 2022;
+      var automatedIdentfiedYear = "2022";
     } else if (inputString.includes("2023")) {
-      var automatedIdentfiedYear = 2023;
+      var automatedIdentfiedYear = "2023";
     } else if (inputString.includes("2024")) {
-      var automatedIdentfiedYear = 2024;
+      var automatedIdentfiedYear = "2024";
     } else if (inputString.includes("2025")) {
-      var automatedIdentfiedYear = 2025;
+      var automatedIdentfiedYear = "2025";
     } else if (inputString.includes("2026")) {
-      var automatedIdentfiedYear = 2026;
+      var automatedIdentfiedYear = "2026";
     }
+
+    // CHECK FOR SEMESTER VALUES
+    if (inputString.includes("SEM1")) {
+      var semesterValue = "1";
+    } else if (inputString.includes("SEM2")) {
+      var semesterValue = "2";
+    } else if (inputString.includes("SEM3")) {
+      var semesterValue = "3";
+    } else if (inputString.includes("SEM4")) {
+      var semesterValue = "4";
+    } else if (inputString.includes("SEM5")) {
+      var semesterValue = "5";
+    } else if (inputString.includes("SEM6")) {
+      var semesterValue = "6";
+    } else if (inputString.includes("SEM7")) {
+      var semesterValue = "7";
+    } else if (inputString.includes("SEM8")) {
+      var semesterValue = "8";
+    }
+
+    // COURSE Identification
+    let courseNameForSubjectsArray = "";
+
+    if (inputString.includes("BTECH")) {
+      var automatedCourseName = "BTECH";
+      courseNameForSubjectsArray = "BTech";
+    } else if (inputString.includes("BCA")) {
+      var automatedCourseName = "BCA";
+      courseNameForSubjectsArray = "BCA";
+    } else if (inputString.includes("BBA")) {
+      var automatedCourseName = "BBA";
+      courseNameForSubjectsArray = "BBA";
+    } else if (inputString.includes("HUMANITIES")) {
+      var automatedCourseName = "HUMANITIES";
+      courseNameForSubjectsArray = "Humanities";
+    } else if (inputString.includes("HOSPITALITY")) {
+      var automatedCourseName = "HOSPITALITY";
+      courseNameForSubjectsArray = "Hospitality";
+    } else if (inputString.includes("HOTELMANAGEMENT")) {
+      var automatedCourseName = "HOTELMANAGEMENT";
+      courseNameForSubjectsArray = "Hotel Management";
+    } else if (inputString.includes("LAW")) {
+      var automatedCourseName = "LAW";
+      courseNameForSubjectsArray = "Law";
+    }
+
+    // check for Subject Name:
+    let automatedIdentifiedSubjectName = "";
+    let automatedIdentifiedSubjectCode = "";
+    let semester = parseInt(semesterValue);
+    let subjectArray = [];
+
+    const selectedOptions =
+      propData.subjectOptionsMap[courseNameForSubjectsArray];
+
+    if (
+      selectedOptions &&
+      semester >= 1 &&
+      semester <= selectedOptions.length
+    ) {
+      subjectArray = selectedOptions[semester - 1];
+    }
+
+    for (let i = 0; i < subjectArray.length; i++) {
+      const element = subjectArray[i];
+
+      if (inputString.includes(element.fileNamingFormatName)) {
+        automatedIdentifiedSubjectName = element.subjectName;
+        automatedIdentifiedSubjectCode = element.subjectCode;
+      }
+    }
+
+    // Setting form DATA:
 
     setFormData({
       ...formData,
-      subject: "",
+      subject: automatedIdentifiedSubjectName,
+      subjectCode: automatedIdentifiedSubjectCode || "",
       unitNo: automatedUnitNo || "",
       assignmentNo: automatedAssignmentNo || "",
       examName: automatedExamName || "",
       course: automatedCourseName || "",
-      semester: semesterValue,
-      category: automatedCategoryName,
-      author: "",
+      semester: semesterValue || "",
+      category: automatedCategoryName || "",
+      author: "edgerunners",
       fileUrl: "",
       fileDownloadUrl: "",
       year: automatedIdentfiedYear,
     });
-    console.log(formData);
   };
 
   return (
@@ -259,6 +300,22 @@ const AddFileInfoForm = () => {
                 id="semester"
                 type="number"
                 placeholder="4"
+              />
+            </div>
+            <div className="">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="subjectCode"
+              >
+                SUBJECT CODE
+              </label>
+              <input
+                onChange={onChange}
+                value={formData.subjectCode}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="subjectCode"
+                type="text"
+                placeholder="DCA0001"
               />
             </div>
             <div className="">

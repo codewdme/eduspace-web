@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import noteContext from "../context/notes/noteContext";
 import { Link, useLocation } from "react-router-dom";
 
@@ -6,15 +6,17 @@ const ChooseCourse = () => {
   const propData = useContext(noteContext);
   const location = useLocation();
 
-  if (location.pathname === "/pyqs") {
-    propData.setSectionHeading("Previous Year Question Papers");
-  } else if (location.pathname === "/assignments") {
-    propData.setSectionHeading("Assignments");
-  } else if (location.pathname === "/notes") {
-    propData.setSectionHeading("Notes");
-  } else if (location.pathname === "/syllabus") {
-    propData.setSectionHeading("Syllabus");
-  }
+  useEffect(() => {
+    if (location.pathname === "/pyqs") {
+      propData.setSectionHeading("Previous Year Question Papers");
+    } else if (location.pathname === "/assignments") {
+      propData.setSectionHeading("Assignments");
+    } else if (location.pathname === "/notes") {
+      propData.setSectionHeading("Notes");
+    } else if (location.pathname === "/syllabus") {
+      propData.setSectionHeading("Syllabus");
+    }
+  });
 
   return (
     <>
@@ -25,6 +27,7 @@ const ChooseCourse = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center p-6 text-lg gap-6">
         {propData.courseOptions.map((element) => {
+          console.log(element);
           return (
             <Link
               key={element}
