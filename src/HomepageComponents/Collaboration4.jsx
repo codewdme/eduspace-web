@@ -1,5 +1,4 @@
 import { useContext, useRef } from "react";
-import desktopMockup from "../assets/Desktop-mockup.png";
 import { useScroll, useTransform, motion } from "framer-motion";
 import noteContext from "../context/notes/noteContext";
 
@@ -27,7 +26,7 @@ const Collaboration3 = () => {
     <motion.div
       ref={targetRef}
       style={{ opacity }}
-      className="  bg-black h-[150vh] w-full"
+      className="  bg-black h-[100vh] w-full"
     >
       <div className="  bg-black sticky top-[10vh]">
         <motion.div

@@ -27,12 +27,11 @@ const ChooseCourse = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center p-6 text-lg gap-6">
         {propData.courseOptions.map((element) => {
-          console.log(element);
           return (
             <Link
               key={element}
               to={`${location.pathname}/choosesem`}
-              className="flex items-center justify-center p-6  bg-blue-200 rounded-xl cursor-pointer  hover:scale-105 transition hover:ease-in-out shadow-lg border-2 border-white hover:border-black "
+              className="flex items-center justify-center h-[7rem] p-6  bg-blue-200 rounded-xl cursor-pointer  hover:scale-105 transition hover:ease-in-out shadow-lg border-2 border-white hover:border-black "
               onClick={() => {
                 propData.setCourseName(element);
               }}

@@ -173,6 +173,9 @@ const AddFileInfoForm = () => {
     } else if (inputString.includes("LAW")) {
       var automatedCourseName = "LAW";
       courseNameForSubjectsArray = "Law";
+    } else if (inputString.includes("BAPSYCHOLOGY")) {
+      var automatedCourseName = "BAPSYCHOLOGY";
+      courseNameForSubjectsArray = "BA Hons. Psychology";
     }
 
     // check for Subject Name:
@@ -213,9 +216,9 @@ const AddFileInfoForm = () => {
       course: automatedCourseName || "",
       semester: semesterValue || "",
       category: automatedCategoryName || "",
-      author: "edgerunners",
+      author: "EdgeRunners",
       fileUrl: "",
-      fileDownloadUrl: "",
+
       year: automatedIdentfiedYear,
     });
   };

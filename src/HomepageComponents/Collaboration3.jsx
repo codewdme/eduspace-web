@@ -1,5 +1,4 @@
 import { useContext, useRef } from "react";
-import desktopMockup from "../assets/Desktop-mockup.png";
 import { useScroll, useTransform, motion } from "framer-motion";
 import noteContext from "../context/notes/noteContext";
 

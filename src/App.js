@@ -11,11 +11,12 @@ import ChooseCourse from "./components/ChooseCourse";
 import Results from "./components/Results";
 import AddFileInfoForm from "./components/AddFileInfoForm";
 import Validation from "./components/Validation";
-import StudyMaterial from "./components/StudyMaterial";
 import Home from "./components/Home";
 import Notes from "./components/Notes";
 import Footer from "./components/Footer";
 import ChooseSubject from "./components/ChooseSubject";
+import UploadFileForm from "./components/UploadFileForm";
+import GetVerified from "./components/GetVerified";
 
 const App = () => {
   return (
@@ -30,6 +31,9 @@ const App = () => {
               <Route path="/pyqs" element={<Pyqs />} />
               <Route path="/results" element={<Results />} />
               <Route path="/notes" element={<Notes />} />
+              <Route path="/uploadfiles" element={<UploadFileForm />} />
+              <Route path="/getverified" element={<GetVerified />} />
+
               {/* course routes */}
               <Route path="/pyqs/choosecourse" element={<ChooseCourse />} />
               <Route path="/syllabus/choosecourse" element={<ChooseCourse />} />

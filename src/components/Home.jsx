@@ -6,11 +6,11 @@ import Collaboration2 from "../HomepageComponents/Collaboration2";
 import Collaboration3 from "../HomepageComponents/Collaboration3";
 import Collaboration4 from "../HomepageComponents/Collaboration4";
 import End from "../HomepageComponents/End";
-import StreamlinedExperience from "../HomepageComponents/StreamlinedExperience";
-import MoreFeatures from "../HomepageComponents/MoreFeatures";
-import SamePage from "../HomepageComponents/SamePage";
-import Features from "../HomepageComponents/Features";
-import NoLockin from "../HomepageComponents/NoLockin";
+// import StreamlinedExperience from "../HomepageComponents/StreamlinedExperience";
+// import MoreFeatures from "../HomepageComponents/MoreFeatures";
+// import SamePage from "../HomepageComponents/SamePage";
+// import Features from "../HomepageComponents/Features";
+// import NoLockin from "../HomepageComponents/NoLockin";
 
 const Home = () => {
   const propData = useContext(noteContext);

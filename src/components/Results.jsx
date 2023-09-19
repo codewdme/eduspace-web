@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import File from "./File";
 import noteContext from "../context/notes/noteContext";
 import { useContext } from "react";
@@ -8,6 +8,12 @@ import Loading from "./Loading";
 const Results = () => {
   const propData = useContext(noteContext);
   const location = useLocation();
+
+  useEffect(() => {
+    propData.state.slice(0, 1).map((element) => {
+      propData.setSelectedSubject(element.subject);
+    });
+  });
 
   // on componetn mount it calls the fetchfiles function to get fileInfo data from backend API;
   // useEffect(() => {
@@ -32,11 +38,18 @@ const Results = () => {
                 {propData.course}
               </p>
               <p className="text-center text-md font-bold  ">
-                {propData.courseName} / Semester {propData.selectedSem}
+                {propData.courseName} / Semester {propData.selectedSem} /{" "}
+                {propData.selectedSubject}
               </p>
             </div>
             {/* Change sem and change course buttons */}
             <div className="w-full md:w-auto flex gap-4 justify-center items-center text-sm font-medium ">
+              <Link
+                to={`${location.pathname.replace("results", "choosesubject")}`}
+                className="p-2 px-4 transition hover:ease-in-out text-black border-2 border-white hover:border-black shadow-lg hover:scale-105 rounded-md flex items-center "
+              >
+                Change Subject
+              </Link>
               <Link
                 to={`${location.pathname.replace("results", "choosesem")}`}
                 className="p-2 px-4 transition hover:ease-in-out text-black border-2 border-white hover:border-black shadow-lg hover:scale-105 rounded-md flex items-center "
@@ -71,15 +84,19 @@ const Results = () => {
           </div>
           <div className="flex flex-wrap  justify-between items-center gap-2">
             <div className="flex  items-center gap-2 ">
-              <p className="text-center text-md font-bold  ">
-                {propData.course}
-              </p>
-              <p className="text-center text-md font-bold  ">
-                {propData.courseName} / Semester {propData.selectedSem}
+              <p className="md:text-center text-md font-bold  ">
+                {propData.course} / {propData.courseName} / Semester{" "}
+                {propData.selectedSem} / {propData.selectedSubject}
               </p>
             </div>
             {/* Change sem and change course buttons */}
             <div className="w-full md:w-auto flex gap-4 justify-center items-center text-sm font-medium ">
+              <Link
+                to={`${location.pathname.replace("results", "choosesubject")}`}
+                className="p-2 px-4 transition hover:ease-in-out text-black border-2 border-white hover:border-black shadow-lg hover:scale-105 rounded-md flex items-center "
+              >
+                Change Subject
+              </Link>
               <Link
                 to={`${location.pathname.replace("results", "choosesem")}`}
                 className="p-2 px-4 transition hover:ease-in-out text-black border-2 border-white hover:border-black shadow-lg hover:scale-105 rounded-md flex items-center "
@@ -102,7 +119,7 @@ const Results = () => {
                 return (
                   <div key={element._id}>
                     <File
-                      title={element.subject}
+                      subject={element.subject}
                       year={element.year}
                       fileUrl={element.fileUrl}
                       fileDownloadUrl={element.fileDownloadUrl}
@@ -111,6 +128,8 @@ const Results = () => {
                       semester={element.semester}
                       author={element.author}
                       unitNo={element.unitNo}
+                      assignmentNo={element.assignmentNo}
+                      category={element.category}
                     />
                   </div>
                 );

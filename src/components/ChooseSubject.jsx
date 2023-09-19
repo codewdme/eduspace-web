@@ -28,7 +28,7 @@ const ChooseSubject = () => {
               to={`${location.pathname.replace("choosesubject", "results")}`}
               className="text-black text-left flex items-center  p-6  bg-blue-200 rounded-xl cursor-pointer  hover:scale-105 transition hover:ease-in-out shadow-lg border-2 border-white hover:border-black font-bold"
               onClick={() => {
-                // propData.fetchfiles(element.subjectCode);
+                propData.fetchFiles(element.subjectCode);
               }}
             >
               {element.subjectName}

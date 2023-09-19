@@ -14,6 +14,13 @@ const NoteState = (props) => {
   const [subjectOptions, setSubjectOptions] = useState([]);
   const [selectedSubject, setSelectedSubject] = useState("");
   const [subjectsReload, setSubjectsReload] = useState(false);
+  // used in upload file component....
+  const [inputEmailId, setInputEmailId] = useState("");
+  //used in get verified route...
+  const [
+    emailIdVerifiedMessageVisibility,
+    setEmailIdVerifiedMessageVisibility,
+  ] = useState(false);
 
   const semesterOptions = [1, 2, 3, 4, 5, 6, 7, 8];
   const courseOptions = [
@@ -24,6 +31,7 @@ const NoteState = (props) => {
     "Humanties",
     "Law",
     "Hotel Management",
+    "BA Hons. Psychology",
   ];
   //
   // Section End
@@ -43,6 +51,11 @@ const NoteState = (props) => {
       subjectName: "Communication Skills",
       subjectCode: "DEN001A",
       fileNamingFormatName: "COMMUNICATIONSKILLS",
+    },
+    {
+      subjectName: "Programming in C++",
+      subjectCode: "NEX0019",
+      fileNamingFormatName: "PROGRAMINGINC++",
     },
     {
       subjectName: "Engineering Mathematics-I",
@@ -72,7 +85,7 @@ const NoteState = (props) => {
     {
       subjectName: "Computer Programming in C++ Lab",
       subjectCode: "DCO02A",
-      fileNamingFormatName: "COMPUTERPROGRAMMINGINC++LAB",
+      fileNamingFormatName: "C++LAB",
     },
     {
       subjectName: "Environmental Sciences",
@@ -227,7 +240,7 @@ const NoteState = (props) => {
       fileNamingFormatName: "GCRPDEPARTMENTALELECTIVE2",
     },
     {
-      subjectName: "Adv. JAVA",
+      subjectName: "Advance JAVA",
       subjectCode: "BCO037B",
       fileNamingFormatName: "ADVANCEJAVA",
     },
@@ -801,6 +814,211 @@ const NoteState = (props) => {
       fileNamingFormatName: "PROJECTWORK",
     },
   ];
+  //
+  // BA PSYCHOLOGY HONS.
+  // Semester 1
+  const baPsychologyHonsSem1 = [
+    {
+      subjectName: "Introduction To Psychology",
+      subjectCode: "BPS001C",
+      fileNamingFormatName: "INTRODUCTIONTOPSYCHOLOGY",
+    },
+    {
+      subjectName: "Social Psychology 1",
+      subjectCode: "BPS002C",
+      fileNamingFormatName: "SOCIALPSYCHOLOGY1",
+    },
+    {
+      subjectName: "Statistical Methods For Psychology",
+      subjectCode: "BPS003D",
+      fileNamingFormatName: "STATISTICALMETHODSFORPSYCHOLOGY",
+    },
+  ];
+
+  // Semester 2
+  const baPsychologyHonsSem2 = [
+    {
+      subjectName: "Biological Basis Of Behaviour",
+      subjectCode: "BPS004C",
+      fileNamingFormatName: "BIOLOGICALBASISOFBEHAVIOUR",
+    },
+    {
+      subjectName: "Human Development And Pedagogy",
+      subjectCode: "BPS005D",
+      fileNamingFormatName: "HUMANDEVELOPMENTANDPEDAGOGY",
+    },
+    {
+      subjectName: "Basics Of Psychopathology",
+      subjectCode: "BPS006C",
+      fileNamingFormatName: "BASICSOFPSYCHOPATHOLOGY",
+    },
+    {
+      subjectName: "Introduction To Positive Psychology",
+      subjectCode: "BPS024C",
+      fileNamingFormatName: "INTRODUCTIONTOPOSITIVEPSYCHOLOGY",
+    },
+    {
+      subjectName: "Gender & Identity",
+      subjectCode: "BPS030C",
+      fileNamingFormatName: "GENDERANDIDENTITY",
+    },
+    {
+      subjectName: "Introduction To Indian Psychology",
+      subjectCode: "BPS036C",
+      fileNamingFormatName: "INTRODUCTIONTOINDIANPSYCHOLOGY",
+    },
+    {
+      subjectName: "Psychology Of Media",
+      subjectCode: "BPS042C",
+      fileNamingFormatName: "PSYCHOLOGYOFMEDIA",
+    },
+  ];
+
+  // Semester 3
+  const baPsychologyHonsSem3 = [
+    {
+      subjectName: "Research Methods In Psychology",
+      subjectCode: "BPS007D",
+      fileNamingFormatName: "RESEARCHMETHODSINPSYCHOLOGY",
+    },
+    {
+      subjectName: "Fundamentals Of Cognitive Psychology",
+      subjectCode: "BPS008C",
+      fileNamingFormatName: "FUNDAMENTALSOFCOGNITIVEPSYCHOLOGY",
+    },
+    {
+      subjectName: "Positive Psychology Approaches And Models",
+      subjectCode: "BPS025C",
+      fileNamingFormatName: "POSITIVEPSYCHOLOGYAPPROACHESANDMODELS",
+    },
+    {
+      subjectName: "Gender Diversity And Inclusion (LGBTQIA+)",
+      subjectCode: "BPS031C",
+      fileNamingFormatName: "GENDERDIVERSITYANDINCLUSION",
+    },
+    {
+      subjectName: "Understanding Self & Personality In Indian Perspective",
+      subjectCode: "BPS037C",
+      fileNamingFormatName: "UNDERSTANDINGSELFANDPERSONALITY",
+    },
+    {
+      subjectName: "Community & Rehabilitation",
+      subjectCode: "BPS043C",
+      fileNamingFormatName: "COMMUNITYANDREHABILITATION",
+    },
+  ];
+
+  // Semester 4
+  const baPsychologyHonsSem4 = [
+    {
+      subjectName: "Counseling And Therapies",
+      subjectCode: "BPS009C",
+      fileNamingFormatName: "COUNSELINGANDTHERAPIES",
+    },
+    {
+      subjectName: "Social Psychology-2",
+      subjectCode: "BPS010C",
+      fileNamingFormatName: "SOCIALPSYCHOLOGY2",
+    },
+    {
+      subjectName: "Self Knowledge Values Character Strengths Researches",
+      subjectCode: "BPS26C",
+      fileNamingFormatName: "SELFKNOWLEDGEVALUESCHARACTERSTRENGTHS",
+    },
+    {
+      subjectName: "Gender And Mental Health",
+      subjectCode: "BPS032C",
+      fileNamingFormatName: "GENDERANDMENTALHEALTH",
+    },
+    {
+      subjectName: "Cognition And Self Perception",
+      subjectCode: "BPS038C",
+      fileNamingFormatName: "COGNITIONANDSELFPERCEPTION",
+    },
+    {
+      subjectName: "Psychology Of Peace",
+      subjectCode: "BPS044C",
+      fileNamingFormatName: "PSYCHOLOGYOFPEACE",
+    },
+  ];
+
+  // Semester 5
+  const baPsychologyHonsSem5 = [
+    {
+      subjectName: "Work And Organisational Psychology",
+      subjectCode: "BPS011C",
+      fileNamingFormatName: "WORKANDORGANISATIONALPSYCHOLOGY",
+    },
+    {
+      subjectName: "Happiness Meaning In Life",
+      subjectCode: "BPS027C",
+      fileNamingFormatName: "HAPPINESSANDMEANINGINLIFE",
+    },
+    {
+      subjectName: "Gender Based Violence And Discrimination",
+      subjectCode: "BPS033C",
+      fileNamingFormatName: "GENDERBASEDVIOLENCEANDDISCRIMINATION",
+    },
+    {
+      subjectName: "Ancient Texts Psychology",
+      subjectCode: "BPS039C",
+      fileNamingFormatName: "ANCIENTTEXTSPSYCHOLOGY",
+    },
+    {
+      subjectName: "Psychology Of Creativity",
+      subjectCode: "BPS045C",
+      fileNamingFormatName: "PSYCHOLOGYOFCREATIVITY",
+    },
+    {
+      subjectName: "Mindfulness",
+      subjectCode: "BPS028C",
+      fileNamingFormatName: "MINDFULNESS",
+    },
+    {
+      subjectName: "Social Change Gender Issues And Intervention",
+      subjectCode: "BPS034C",
+      fileNamingFormatName: "SOCIALCHANGEGENDERISSUES",
+    },
+    {
+      subjectName: "Researches In Indian Psychology",
+      subjectCode: "BPS040C",
+      fileNamingFormatName: "RESEARCHESININDIANPSYCHOLOGY",
+    },
+    {
+      subjectName: "Educational Psychology",
+      subjectCode: "BPS46C",
+      fileNamingFormatName: "EDUCATIONALPSYCHOLOGY",
+    },
+  ];
+
+  // Semester 6
+  const baPsychologyHonsSem6 = [
+    {
+      subjectName: "Fundamentals Of Clinical Psychology",
+      subjectCode: "BPS012C",
+      fileNamingFormatName: "FUNDAMENTALSOFCLINICALPSYCHOLOGY",
+    },
+    {
+      subjectName: "Adaptive Resilience Well Being",
+      subjectCode: "BPS029C",
+      fileNamingFormatName: "ADAPTIVERESILIENCEWELLBEING",
+    },
+    {
+      subjectName: "Gender Issues Researches",
+      subjectCode: "BPS035C",
+      fileNamingFormatName: "GENDERISSUESRESEARCHES",
+    },
+    {
+      subjectName: "Indian Psychology And Its Applications",
+      subjectCode: "BPS041C",
+      fileNamingFormatName: "INDIANPSYCHOLOGYANDAPPLICATIONS",
+    },
+    {
+      subjectName: "Psychology Health",
+      subjectCode: "BPS47C",
+      fileNamingFormatName: "PSYCHOLOGYHEALTH",
+    },
+  ];
 
   //
   // Section End
@@ -865,6 +1083,14 @@ const NoteState = (props) => {
       hotelManagementSubjectsSem5,
       hotelManagementSubjectsSem6,
     ],
+    "BA Hons. Psychology": [
+      baPsychologyHonsSem1,
+      baPsychologyHonsSem2,
+      baPsychologyHonsSem3,
+      baPsychologyHonsSem4,
+      baPsychologyHonsSem5,
+      baPsychologyHonsSem6,
+    ],
   };
 
   const updateSubjectOptions = () => {
@@ -883,14 +1109,15 @@ const NoteState = (props) => {
   //
   //
   //
-
+  const host = "https://naughty-lion-train.cyclic.app";
+  // "http://localhost:3001" ||
   // api call to fetch files information from backend.
-  async function fetchFiles(subject) {
-    setSelectedSubject(subject);
+  async function fetchFiles(subjectCode) {
+    console.log(subjectCode);
     setLoading(true);
     setTimeout(async () => {
-      let url = `https://naughty-lion-train.cyclic.app/edgerunners/junexus/fetchfileinfo/${selectedCategory}/${courseName}/${selectedSem}/${subject}`;
-
+      let url = `https://naughty-lion-train.cyclic.app/edgerunners/junexus/fetchfileinfo/${selectedCategory}/${courseName}/${selectedSem}/${subjectCode}`;
+      console.log(url);
       const response = await fetch(url, {
         method: "GET",
 
@@ -950,7 +1177,14 @@ const NoteState = (props) => {
 
         setHomePageNavbarVisibility,
         setSubjectsReload,
+        selectedSubject,
+        setSelectedSubject,
         subjectsReload,
+        inputEmailId,
+        setInputEmailId,
+        host,
+        setEmailIdVerifiedMessageVisibility,
+        emailIdVerifiedMessageVisibility,
         subjectOptionsMap,
         homePageNavbarVisibility,
         subjectOptions,

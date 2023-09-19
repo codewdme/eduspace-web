@@ -24,3 +24,27 @@ body {
 .navbar-item{
   @apply   text-center md:text-left p-2 pr-4  border-l-2 rounded-xl border-white transition ease-in-out hover:border-black hover:scale-110 hover:shadow-lg  block text-xs md:text-sm font-bold  ;
 }
+
+/* Hide the text that says "Choose file" */
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+  display: none;
+}
+
+/* Hide the "No file chosen" label */
+input[type="file"]::before {
+  content: ''; /* This clears any default content */
+  display: none; /* Hide the label */
+}
+
+.file-input-container {
+  position: relative;
+  overflow: hidden;
+}
+.file-input {
+  position: absolute;
+  font-size: 100px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}

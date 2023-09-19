@@ -21,7 +21,15 @@ const File = (props) => {
 
           {/* filename and details */}
 
-          <p className="text-sm text-left font-bold p-4">{props.title}</p>
+          <p className="text-sm text-left font-bold p-4">
+            {props.subject}{" "}
+            {/* {`${
+              (props.assignmentNo === "NULL" || null) &&
+              props.category !== "ASSIGNMENTS"
+                ? ""
+                : ` Assignment - ${props.assignmentNo}`
+            }`} */}
+          </p>
         </div>
         <div className="h-[20%] w-full flex flex-col">
           <span className="bg-border-grey h-[2px] w-[90%] self-center rounded-sm"></span>
@@ -29,8 +37,19 @@ const File = (props) => {
           <div className="flex gap-2 text-xs font-medium justify-center items-center p-2">
             <p>{props.course}</p>
             <p>SEM-{props.semester}</p>
-            <p>{props.examName === "NULL" ? "" : props.examName}</p>
-            <p>{props.UnitNo === "NULL" ? "" : ` Unit - ${props.UnitNo}`}</p>
+            <p className={`${props.category === "PYQS" ? "" : "hidden"}`}>
+              {props.examName === "NULL" || null ? "" : props.examName}
+            </p>
+            <p className={`${props.category === "NOTES" ? "" : "hidden"}`}>
+              {props.unitNo === "NULL" || null ? "" : ` Unit - ${props.unitNo}`}
+            </p>
+            <p
+              className={`${props.category === "ASSIGNMENTS" ? "" : "hidden"}`}
+            >
+              {props.assignmentNo === "NULL" || null
+                ? ""
+                : ` ASSIGN - ${props.assignmentNo}`}
+            </p>
             <p>{props.year}</p>
           </div>
         </div>
