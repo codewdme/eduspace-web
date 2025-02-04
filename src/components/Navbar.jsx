@@ -40,9 +40,7 @@ const Navbar = () => {
           <div className="md:w-full object-contain flex items-center w-[10%]">
             <img src={logo} className=" w-[80%] md:w-full " />
           </div>
-          <span className="md:self-center text-2xl font-semibold ">
-            JU NEXUS
-          </span>
+       
         </Link>
 
         {/* second part of navbar */}
