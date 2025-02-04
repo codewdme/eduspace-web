@@ -8,7 +8,7 @@ const About = () => {
       </div>
       <div className="flex flex-col justify-center items-center  ">
         <div className=" px-14 text-xl text-center font-medium">
-          "JU Nexus is a comprehensive platform catering to the needs of JU
+          "Eduspace is a comprehensive platform catering to the needs of JU
           students, offering seamless access to a repository of previous year
           question papers, notes, assignments, syllabus, and more. This
           centralized hub enhances academic efficiency, allowing students to
