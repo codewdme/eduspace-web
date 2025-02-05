@@ -71,7 +71,7 @@ const App = () => {
               <Route path="/validation" element={<Validation />} />
               {/* <Route path="/studymaterial" element={<StudyMaterial />} /> */}
             </Routes>
-            // <Footer />
+         
           </div>
         </div>
       </Router>
