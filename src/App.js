@@ -13,7 +13,7 @@ import AddFileInfoForm from "./components/AddFileInfoForm";
 import Validation from "./components/Validation";
 import Home from "./components/Home";
 import Notes from "./components/Notes";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import ChooseSubject from "./components/ChooseSubject";
 import UploadFileForm from "./components/UploadFileForm";
 import GetVerified from "./components/GetVerified";
@@ -71,7 +71,7 @@ const App = () => {
               <Route path="/validation" element={<Validation />} />
               {/* <Route path="/studymaterial" element={<StudyMaterial />} /> */}
             </Routes>
-            <Footer />
+            // <Footer />
           </div>
         </div>
       </Router>
